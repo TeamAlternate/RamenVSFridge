@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 7f;
 
     private Vector2 moveInput;
-    private Rigidbody rb;
+   private Rigidbody rb;
 
     private int playerIndex;
     private GameObject currentCharacter;
