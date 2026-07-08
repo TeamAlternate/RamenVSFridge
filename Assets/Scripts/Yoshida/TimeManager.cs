@@ -81,8 +81,6 @@ public class TimeManager : MonoBehaviour
         if (!isTimeup)
         {
             TimeDecrease();
-
-            Debug.Log(time);
         }
     }
 
@@ -111,8 +109,6 @@ public class TimeManager : MonoBehaviour
                 // ƒCƒxƒ“ƒg”­‰Î
                 OnTimeup();
             }
-
-            Debug.Log("TIME UP");
         }
 
         return onTimeup;
