@@ -1,6 +1,10 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
+/// <summary>
+/// 時間の進行速度ステート
+/// </summary>
 public enum TimeState
 {
     Normal,
@@ -14,10 +18,12 @@ public enum TimeState
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private float timeMax = 180.0f;
+    [SerializeField] private TimeRemainingsDisplay timeRemainingsDisplayGameObject;
+    [SerializeField] private GameObject finishAnimationGameObject;
 
     public float time { get; private set; }
-    private float accelerate = 1.5f;
-    private float decelerate = 0.75f;
+    private float accelerate = 3.5f;
+    private float decelerate = -0.5f;
     private TimeState state = TimeState.Normal;
     private bool isTimeup = false;
 
@@ -33,6 +39,11 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         Initialize();
+
+        var timeRemainingsDisplay = Instantiate(timeRemainingsDisplayGameObject, this.transform);
+        timeRemainingsDisplay.Initialize(this);
+
+        OnTimeup += PlayFinishAnimation;
 
         // デバッグ用
         Application.targetFrameRate = 60;
@@ -70,9 +81,15 @@ public class TimeManager : MonoBehaviour
         if (!isTimeup)
         {
             TimeDecrease();
-
-            Debug.Log(time);
         }
+    }
+
+    /// <summary>
+    /// 終了時処理
+    /// </summary>
+    private void OnDestroy()
+    {
+        OnTimeup -= PlayFinishAnimation;
     }
 
     /// <summary>
@@ -87,13 +104,11 @@ public class TimeManager : MonoBehaviour
         if( onTimeup )
         {
             var timeEvent = OnTimeup;
-            if (timeEvent != null)
+            if (timeEvent != null && isTimeup == false)
             {
                 // イベント発火
                 OnTimeup();
             }
-
-            Debug.Log("TIME UP");
         }
 
         return onTimeup;
@@ -131,5 +146,22 @@ public class TimeManager : MonoBehaviour
         }
 
         time -= decrease;
+    }
+
+    /// <summary>
+    /// ステートを渡す
+    /// </summary>
+    /// <returns>今のステート</returns>
+    public TimeState GetTimeState()
+    {
+        return state;
+    }
+
+    /// <summary>
+    /// 終了時アニメーション
+    /// </summary>
+    private void PlayFinishAnimation()
+    {
+        Instantiate(finishAnimationGameObject, this.transform);
     }
 }
