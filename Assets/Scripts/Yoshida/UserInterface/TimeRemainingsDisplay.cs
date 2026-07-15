@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.TextCore.Text;
 
 /// <summary>
 /// Žc‚èŽžŠÔ•\Ž¦
@@ -8,6 +9,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class TimeRemainingsDisplay : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] TMP_FontAsset fontAsset;
 
     private TimeManager timeManagerGameObject;
     private float remainingsTime = 0.0f;
@@ -17,6 +19,7 @@ public class TimeRemainingsDisplay : MonoBehaviour
     {
         timeManagerGameObject = timeManager;
         this.remainingsTime = timeManagerGameObject.time;
+        timeText.font = fontAsset;
     }
 
     private void Update()
