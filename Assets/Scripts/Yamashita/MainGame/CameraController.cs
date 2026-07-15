@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControler : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
-    private static CameraControler instance;
+    private static CameraController instance;
 
     private Camera cam;
     [SerializeField] private float chaseSpeed;

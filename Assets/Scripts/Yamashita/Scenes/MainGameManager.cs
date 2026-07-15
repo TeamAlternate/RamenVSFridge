@@ -13,7 +13,8 @@ namespace Scenes
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-
+            CameraController.AddTarget(GameObject.FindWithTag("Ramen"));
+            CameraController.AddTarget(GameObject.FindWithTag("Fridge"));
         }
 
         // Update is called once per frame
