@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float distance;
     [SerializeField] private float focusMergin;
-    private List<GameObject> targets;
+    private List<GameObject> targets = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
