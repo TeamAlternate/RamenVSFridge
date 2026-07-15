@@ -5,6 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance { get; private set; }
 
+    [SerializeField]
     private int toppingScore = 0;
     private const int maxToppintScore = 4;
 
