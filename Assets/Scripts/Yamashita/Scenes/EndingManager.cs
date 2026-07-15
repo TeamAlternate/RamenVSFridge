@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.UserInterfaces;
 
 namespace Sceces
 {
@@ -7,7 +8,10 @@ namespace Sceces
     {
         [SerializeField] private KeyCode returnKey;
         [SerializeField] private KeyCode restartKey;
-        [SerializeField] private string nextSceneName;
+        [SerializeField] private SceneTransition toTitleTransitionPrefab;
+        [SerializeField] private SceneTransition toMainGameTransitionPrefab;
+        [SerializeField] private string titleSceneName;
+        [SerializeField] private string mainGameSceneName;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -30,13 +34,12 @@ namespace Sceces
 
         public void ReturnToTitle()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+            Instantiate(toTitleTransitionPrefab).EnterTransition(titleSceneName);
         }
 
         public void RestartGame()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
-
+            Instantiate(toMainGameTransitionPrefab).EnterTransition(mainGameSceneName);
         }
     }
 }

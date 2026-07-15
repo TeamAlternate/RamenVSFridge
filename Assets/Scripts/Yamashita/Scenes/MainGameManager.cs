@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.UserInterfaces;
 
 namespace Scenes
 {
@@ -6,7 +7,8 @@ namespace Scenes
     public class MainGameManager : MonoBehaviour
     {
         [SerializeField] private KeyCode startKey;
-        [SerializeField] private string nextSceneName;
+        [SerializeField] private SceneTransition toEndingTransitionPrefab;
+        [SerializeField] private string endingSceneName;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -22,8 +24,7 @@ namespace Scenes
 
         public void MoveToEnding()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
-
+            Instantiate(toEndingTransitionPrefab).EnterTransition(endingSceneName);
         }
     }
 

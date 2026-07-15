@@ -1,4 +1,5 @@
 using UnityEngine;
+using Util.UserInterfaces;
 
 namespace Scenes
 {
@@ -6,7 +7,8 @@ namespace Scenes
     public class TitleManager : MonoBehaviour
     {
         [SerializeField] private KeyCode startKey;
-        [SerializeField] private string nextSceneName;
+        [SerializeField] private SceneTransition toMainGameTransitionPrefab;
+        [SerializeField] private string mainGameSceneName;
 
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +29,7 @@ namespace Scenes
         public void StartGame()
         {
             MatchSettings.Update(new MatchSettings());
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+            Instantiate(toMainGameTransitionPrefab).EnterTransition(mainGameSceneName);
         }
     }
 }
