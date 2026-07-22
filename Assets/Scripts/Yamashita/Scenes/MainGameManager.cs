@@ -23,8 +23,19 @@ namespace Scenes
         {
             if(Input.GetKeyDown(startKey))
             {
-                MoveToEnding();
+                FinishGame();
             }
+        }
+
+        public void FinishGame()
+        {
+            MatchResult result = new MatchResult()
+            {
+                resultType = MatchResult.ResultTypes.RamenWin,
+
+            };
+            MatchResult.Update(result);
+            MoveToEnding();
         }
 
         public void MoveToEnding()

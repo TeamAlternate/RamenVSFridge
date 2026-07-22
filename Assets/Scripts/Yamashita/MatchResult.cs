@@ -13,11 +13,15 @@ public class MatchResult
         FridgeWin,
         Draw,
     }
-    private ResultTypes resultType;
+    public ResultTypes resultType;
+    // public Topping[] collectedToppings;
+
 
     public static void Update(MatchResult newResult)
     {
         recent = newResult;
     }
+
+
 
 }
