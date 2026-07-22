@@ -22,7 +22,19 @@ public class ToppingManager : MonoBehaviour
     {
         int randomValue = Random.Range(0, toppingObject.Length);
 
+        GameObject topping = Instantiate(toppingObject[randomValue], spawnPos +
+            Vector3.up * 1.7f, Quaternion.identity);
+
+        if (topping.TryGetComponent(out Rigidbody rb))
+        {
+            rb.AddForce
+                (new Vector3(Random.Range(-1.2f, 1.2f), 5f,
+                Random.Range(-1.2f, 1.2f)), ForceMode.Impulse);
+
+            rb.AddTorque
+               (Random.insideUnitSphere * 3f, ForceMode.Impulse);
+        }
+
         Debug.Log("Spawn Topping");
-        Instantiate(toppingObject[randomValue], spawnPos, Quaternion.identity);
     }
 }

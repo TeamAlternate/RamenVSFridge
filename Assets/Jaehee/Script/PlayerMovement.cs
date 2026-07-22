@@ -73,5 +73,14 @@ public class PlayerMovement : MonoBehaviour
         velocity.y = rb.linearVelocity.y;
 
         rb.linearVelocity = velocity;
+
+        if (move.sqrMagnitude > 0.01f && currentCharacter != null)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(move.normalized, Vector3.up);
+
+            currentCharacter.transform.rotation =
+                Quaternion.RotateTowards( currentCharacter.transform.rotation,
+                    targetRotation,  300.0f * Time.fixedDeltaTime );
+        }
     }
 }

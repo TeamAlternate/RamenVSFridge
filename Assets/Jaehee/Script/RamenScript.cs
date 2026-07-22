@@ -13,6 +13,10 @@ public class RamenScript : MonoBehaviour
     private void Awake()
     {
         attackCollider = transform.GetChild(0).gameObject;
+        if (attackCollider)
+        {
+            attackCollider.SetActive(false);
+        }
     }
 
     private void Update()
@@ -30,17 +34,6 @@ public class RamenScript : MonoBehaviour
             attackCollider.SetActive(true);
         }
     }
-
-    private void CheckAttackDirection()
-    {
-
-    }
-    /*
-     *     public void OnMove(InputValue input)
-    {
-        moveInput = input.Get<Vector2>();
-    }
-     */
 
     private void AttackTimer()
     {
