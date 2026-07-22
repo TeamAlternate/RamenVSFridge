@@ -60,7 +60,7 @@ public class CameraController : MonoBehaviour
             targetDistance = Mathf.Max(Mathf.Tan((90.0f - baseFOV * 0.5f) * Mathf.Deg2Rad) * targetToFocus.magnitude, targetDistance);
         }
         targetDistance = Mathf.Clamp(targetDistance, minDistance, maxDistance);
-        currentDistance = Mathf.Lerp(currentDistance, targetDistance, Mathf.Exp(-zoomSpeed*  Time.deltaTime));
+        currentDistance = Mathf.Lerp(targetDistance, currentDistance, Mathf.Exp(-zoomSpeed*  Time.deltaTime));
     }
 
     public static void AddTarget(GameObject newTarget)
