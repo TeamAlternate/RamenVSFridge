@@ -6,7 +6,7 @@ public class RamenScript : MonoBehaviour
     [SerializeField]
     GameObject attackCollider;
 
-    private const float maxAttackTime = 1.0f;
+    private const float maxAttackTime = 2.0f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
 
@@ -28,7 +28,7 @@ public class RamenScript : MonoBehaviour
     {
         if (input.isPressed && !attackChecker)
         {
-            Debug.Log("player attack");
+            Debug.Log("Ramen attack");
             attackTime = 0.0f;
             attackChecker = true;
             attackCollider.SetActive(true);

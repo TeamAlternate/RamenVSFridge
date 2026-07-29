@@ -8,6 +8,7 @@ public class RamenAttack : MonoBehaviour
         {
             Transform fridgeTransform = other.gameObject.GetComponent<Transform>();
             ToppingManager.instance.SpawnTopping(fridgeTransform.position);
+
         }
     }
 }
