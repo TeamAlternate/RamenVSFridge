@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 5481396922398424905}
   m_Layer: 0
   m_Name: Floors
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -620,6 +620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -678,6 +682,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -735,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -856,6 +868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -917,6 +933,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1100,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1157,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1278,6 +1306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1335,6 +1367,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1704,6 +1740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1889,6 +1929,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2278,6 +2322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2397,6 +2445,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2704,6 +2756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2890,6 +2946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2947,6 +3007,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3129,6 +3193,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3374,6 +3442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3618,6 +3690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3680,6 +3756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3737,6 +3817,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3919,6 +4003,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4163,6 +4251,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4470,6 +4562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4656,6 +4752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4717,6 +4817,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4965,6 +5069,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5474,6 +5582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5531,6 +5643,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5842,6 +5958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5899,6 +6019,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6020,6 +6144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6140,6 +6268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6197,6 +6329,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6260,6 +6396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6321,6 +6461,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6442,6 +6586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6562,6 +6710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6620,6 +6772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6677,6 +6833,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7045,6 +7205,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7678,6 +7842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7735,6 +7903,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7921,6 +8093,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8166,6 +8342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8285,6 +8465,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8406,6 +8590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8526,6 +8714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTiles (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8587,6 +8779,10 @@ PrefabInstance:
     - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
       propertyPath: m_Name
       value: FloorTiles (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909109678596702197, guid: 349e583cc843ea0479ca1efed7fffed5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
