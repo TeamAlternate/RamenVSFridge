@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 5779561209795941574}
   - component: {fileID: 2986450471835796456}
   m_Layer: 0
-  m_Name: Chashu
+  m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8642996956252002634}
-  - {fileID: 1089361755639126219}
+  - {fileID: 4648856648028253456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7779452068111238855
@@ -204,7 +204,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!1001 &618270522730970912
+--- !u!1001 &5120231040816941819
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -212,57 +212,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8945834977145794820}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8311e432f5f3a824091236c29724991e, type: 3}
+    - target: {fileID: 919132149155446097, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
       propertyPath: m_Name
-      value: Chashu
+      value: Egg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8311e432f5f3a824091236c29724991e, type: 3}
---- !u!4 &1089361755639126219 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
+--- !u!4 &4648856648028253456 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8311e432f5f3a824091236c29724991e, type: 3}
-  m_PrefabInstance: {fileID: 618270522730970912}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 930b4cb51b872b446a2e208f5d56d82b, type: 3}
+  m_PrefabInstance: {fileID: 5120231040816941819}
   m_PrefabAsset: {fileID: 0}
