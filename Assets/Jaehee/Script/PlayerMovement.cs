@@ -7,7 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
     [Header("Jump")]
-    [SerializeField] private float jumpPower = 7f;
+    [SerializeField] private float jumpPower = 5f;
+
+    [Header("etc")]
+    private bool isGround;
 
     private Vector2 moveInput;
     private Rigidbody rb;
@@ -18,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        isGround = false;
     }
 
     public void SetPlayerIndex(int index)
@@ -50,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        if (input.isPressed)
+        if (input.isPressed && isGround)
         {
             rb.linearVelocity = new Vector3(
                 rb.linearVelocity.x,
@@ -73,5 +77,31 @@ public class PlayerMovement : MonoBehaviour
         velocity.y = rb.linearVelocity.y;
 
         rb.linearVelocity = velocity;
+
+        if (move.sqrMagnitude > 0.01f && currentCharacter != null)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(move.normalized, Vector3.up);
+
+            currentCharacter.transform.rotation =
+                Quaternion.RotateTowards( currentCharacter.transform.rotation,
+                    targetRotation,  300.0f * Time.fixedDeltaTime );
+        }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = false;
+        }
+    }
+
 }

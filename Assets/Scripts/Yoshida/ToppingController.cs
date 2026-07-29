@@ -10,7 +10,8 @@ public enum ToppingType
 
 public class ToppingController : MonoBehaviour
 {
-    [SerializeField] ToppingType toppringType;
+    [SerializeField] ToppingType toppingType;
+    [SerializeField] GameObject toppingModel;
 
     float moveY = 0.5f;
     float time = 0.0f;
@@ -36,5 +37,15 @@ public class ToppingController : MonoBehaviour
         Vector3 add = Vector3.zero;
         add.y = rotateSpeed;
         transform.Rotate(add);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool isRamen = other.gameObject.tag == "Ramen";
+        if(isRamen)
+        {
+            // AddTopping(toppingModel);
+            Destroy(this.gameObject);
+        }
     }
 }
