@@ -7,17 +7,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
     [Header("Jump")]
-    [SerializeField] private float jumpPower = 7f;
+    [SerializeField] private float jumpPower = 5f;
+
+    [Header("etc")]
+    private bool isGround;
 
     private Vector2 moveInput;
-   private Rigidbody rb;
+    private Rigidbody rb;
 
     private int playerIndex;
     private GameObject currentCharacter;
 
+  
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        isGround = false;
     }
 
     public void SetPlayerIndex(int index)
@@ -50,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        if (input.isPressed)
+        if (input.isPressed && isGround)
         {
             rb.linearVelocity = new Vector3(
                 rb.linearVelocity.x,
@@ -83,4 +89,21 @@ public class PlayerMovement : MonoBehaviour
                     targetRotation,  300.0f * Time.fixedDeltaTime );
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            isGround = false;
+        }
+    }
+
 }
