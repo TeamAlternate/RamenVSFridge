@@ -2,16 +2,26 @@ using UnityEngine;
 
 public class CampfireGenerater : MonoBehaviour
 {
+    public static CampfireGenerater instance { get; private set; }
+
     [SerializeField] CampfireController campfirePrefab;
 
     private CampfireController campfire;
-    [SerializeField] private float time = 0.0f;
+    private float time = 0.0f;
     private float minIntervalTime = 15.0f;
     private float intervalRandomRange = 10.0f;
 
     private void Awake()
     {
-        TimeReset();
+        if (instance == null)
+        {
+            instance = this;
+            TimeReset();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
