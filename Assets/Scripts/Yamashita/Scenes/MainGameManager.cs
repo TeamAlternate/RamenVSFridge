@@ -10,12 +10,19 @@ namespace Scenes
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
         [SerializeField] private string endingSceneName;
 
+        [SerializeField] private string[] cameraFocusTags;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             SceneTransition.ExitTransition();
-            // CameraController.AddTarget(GameObject.FindWithTag("Ramen"));
-            //CameraController.AddTarget(GameObject.FindWithTag("Fridge"));
+            foreach(string tag in cameraFocusTags)
+            {
+                foreach(GameObject obj in GameObject.FindGameObjectsWithTag(tag))
+                {
+                    CameraController.AddTarget(obj);
+                }
+            }
         }
 
         // Update is called once per frame
