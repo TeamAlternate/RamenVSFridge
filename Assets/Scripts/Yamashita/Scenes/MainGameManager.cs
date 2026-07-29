@@ -30,17 +30,17 @@ namespace Scenes
         {
             if(Input.GetKeyDown(startKey))
             {
-                FinishGame();
+                MatchResult result = new MatchResult()
+                {
+                    resultType = MatchResult.ResultTypes.RamenWin,
+
+                };
+                FinishGame(result);
             }
         }
 
-        public void FinishGame()
+        public void FinishGame(MatchResult result)
         {
-            MatchResult result = new MatchResult()
-            {
-                resultType = MatchResult.ResultTypes.RamenWin,
-
-            };
             MatchResult.Update(result);
             MoveToEnding();
         }
