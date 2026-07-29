@@ -6,43 +6,39 @@ namespace Scenes
 
     public class MainGameManager : MonoBehaviour
     {
-        [SerializeField] private KeyCode startKey;
+        private static MainGameManager instance;
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
         [SerializeField] private string endingSceneName;
 
-        [SerializeField] private string[] cameraFocusTags;
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+        }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             SceneTransition.ExitTransition();
-            foreach(string tag in cameraFocusTags)
-            {
-                foreach(GameObject obj in GameObject.FindGameObjectsWithTag(tag))
-                {
-                    CameraController.AddTarget(obj);
-                }
-            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(Input.GetKeyDown(startKey))
-            {
-                MatchResult result = new MatchResult()
-                {
-                    resultType = MatchResult.ResultTypes.RamenWin,
 
-                };
-                FinishGame(result);
-            }
         }
 
-        public void FinishGame(MatchResult result)
+        public static void FinishGame(MatchResult result)
         {
             MatchResult.Update(result);
-            MoveToEnding();
+            instance.MoveToEnding();
         }
 
         public void MoveToEnding()

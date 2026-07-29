@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b449a5241abcc46b8cf0f08040ac3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matchResultDisplay: {fileID: 94718125}
   returnKey: 13
   restartKey: 32
   toTitleTransitionPrefab: {fileID: 8963216355167468439, guid: 1c405b7e63aef17438202eb641e72cc3, type: 3}
