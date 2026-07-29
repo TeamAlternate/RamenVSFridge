@@ -51,5 +51,14 @@ public class RamenScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // Ä‰Á”M
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            TimeManager.instance.ChangeTimeState(TimeState.Accele);
+        }
+    }
+
 
 }

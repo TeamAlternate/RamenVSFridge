@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb45351360631c448f07c85913c75d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCollider: {fileID: 0}
 --- !u!1 &8529381507622306537
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ GameObject:
   - component: {fileID: 3319911112200070732}
   - component: {fileID: 2688443595128471870}
   - component: {fileID: 1579412580659780456}
-  - component: {fileID: 2250604340771742993}
+  - component: {fileID: 8305028360504823855}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -186,7 +187,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2250604340771742993
+--- !u!114 &8305028360504823855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8529381507622306537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 836f4a5d4834dd84caf5b3dc5b4d7349, type: 3}
+  m_Script: {fileID: 11500000, guid: 35ef68a5a23c7c14a8a122f18ea8ac63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &974694420809173169
