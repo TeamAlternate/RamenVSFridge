@@ -14,6 +14,7 @@ namespace UserInterfaces
         public void SetAppearence(GameObject appearenceInstance)
         {
             appearencePivot.SetParent(appearenceInstance.transform);
+            appearenceInstance.transform.localPosition = Vector3.zero;
         }
     }
 }
