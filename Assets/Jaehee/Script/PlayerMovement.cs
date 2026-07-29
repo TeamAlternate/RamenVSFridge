@@ -18,8 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private int playerIndex;
     private GameObject currentCharacter;
 
-  
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
