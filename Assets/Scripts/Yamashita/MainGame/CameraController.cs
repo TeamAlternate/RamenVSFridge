@@ -42,6 +42,7 @@ public class CameraController : MonoBehaviour
             return;
         }
         Vector3 focusCenter = Vector3.zero;
+        targets.RemoveAll((go) => go == null);
         foreach (GameObject target in targets)
         {
             focusCenter += target.transform.position;
