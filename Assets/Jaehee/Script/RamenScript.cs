@@ -10,6 +10,10 @@ public class RamenScript : MonoBehaviour
     private float attackTime = 0.0f;
     private bool attackChecker = false;
 
+
+    private const float reheatInterval = 2f;
+    private float reheatTimer = 0f;
+
     private void Awake()
     {
         attackCollider = transform.GetChild(0).gameObject;
@@ -51,14 +55,26 @@ public class RamenScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        // Ä‰Á”M
-        if (other.gameObject.CompareTag("Fire"))
+        if (other.CompareTag("Fire"))
         {
-            TimeManager.instance.ChangeTimeState(TimeState.Accele);
+            reheatTimer += Time.fixedDeltaTime;
+
+            if (reheatTimer >= reheatInterval)
+            {
+                TimeManager.instance.ChangeTimeState(TimeState.Accele);
+                reheatTimer = 0f;
+            }
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            reheatTimer = 0f;
+        }
+    }
 
 }
