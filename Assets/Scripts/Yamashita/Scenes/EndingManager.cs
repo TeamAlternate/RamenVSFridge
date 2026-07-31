@@ -6,6 +6,7 @@ namespace Sceces
 
     public class EndingManager : MonoBehaviour
     {
+        [SerializeField] private UserInterfaces.MatchResultDisplay matchResultDisplay;
         [SerializeField] private KeyCode returnKey;
         [SerializeField] private KeyCode restartKey;
         [SerializeField] private SceneTransition toTitleTransitionPrefab;
@@ -17,7 +18,7 @@ namespace Sceces
         void Start()
         {
             SceneTransition.ExitTransition();
-
+            matchResultDisplay.UpdateDisplay(MatchResult.GetRecent());
         }
 
         // Update is called once per frame

@@ -32,6 +32,11 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("ToppingScore:" + toppingScore);
     }
 
+    public int GetScore()
+    {
+        return toppingScore;
+    }
+
     private void RamenWin()
     {
         if (toppingScore < maxToppintScore)
