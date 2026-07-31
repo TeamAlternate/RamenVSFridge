@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float maxDistance;
     [Range(40.0f, 180.0f)]
     [SerializeField] private float baseFOV;
-    private List<GameObject> targets = new List<GameObject>();
+    static private List<GameObject> targets = new List<GameObject>();
 
     private float currentDistance;
 
@@ -43,6 +43,10 @@ public class CameraController : MonoBehaviour
         }
         Vector3 focusCenter = Vector3.zero;
         targets.RemoveAll((go) => go == null);
+        if(targets.Count == 0)
+        {
+            return;
+        }
         foreach (GameObject target in targets)
         {
             focusCenter += target.transform.position;
@@ -66,11 +70,11 @@ public class CameraController : MonoBehaviour
 
     public static void AddTarget(GameObject newTarget)
     {
-        instance.targets.Add(newTarget);
+        targets.Add(newTarget);
     }
 
     public static void RemoveTarget(GameObject removeTarget)
     {
-        instance.targets.Remove(removeTarget);
+        targets.Remove(removeTarget);
     }
 }

@@ -11,6 +11,7 @@ public class TitleStarter : MonoBehaviour
     private float startRemainingTime;
     private bool isStayRamen = false;
     private bool isStayFridge = false;
+    private bool isGameStarted = false;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class TitleStarter : MonoBehaviour
         }
 
         startRemainingTime = startStayTime;
+        isGameStarted = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,7 +42,10 @@ public class TitleStarter : MonoBehaviour
         if( isStayRamen && isStayFridge )
         {
             startRemainingTime -= Time.deltaTime;
-            StartGame();
+            if (startRemainingTime < 0.0f)
+            {
+                StartGame();
+            }
         }
         else
         {
@@ -52,7 +57,11 @@ public class TitleStarter : MonoBehaviour
 
     private void StartGame()
     {
-        titleManagerGameObject.GetComponent<TitleManager>().StartGame();
+        if (!isGameStarted)
+        {
+            titleManagerGameObject.GetComponent<TitleManager>().StartGame();
+            isGameStarted = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
