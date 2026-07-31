@@ -5,12 +5,12 @@ namespace UserInterfaces
 {
     public class MatchResultDisplay : MonoBehaviour
     {
-        [SerializeField] private Image Image;
-        [SerializeField] private Sprite[] resultTypeSprite;
+        [SerializeField] private GameObject[] resultTypePrefabs;
 
         public void UpdateDisplay(MatchResult newMatchResult)
         {
-            Image.sprite = resultTypeSprite[(int)newMatchResult.resultType];
+            GameObject go = Instantiate(resultTypePrefabs[(int)newMatchResult.resultType]);
+            go.transform.SetParent(this.transform, false);
         }
     }
 }

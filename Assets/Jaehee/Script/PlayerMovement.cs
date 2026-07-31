@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         isGround = false;
+
+        CameraController.AddTarget(gameObject);
     }
 
     public void SetPlayerIndex(int index)
