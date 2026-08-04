@@ -6,10 +6,12 @@ public class RamenScript : MonoBehaviour
     [SerializeField]
     GameObject attackCollider;
 
+    [SerializeField]
+    GameObject ramenAttackEffect;
+
     private const float maxAttackTime = 2.0f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
-
 
     private const float reheatInterval = 2f;
     private float reheatTimer = 0f;
@@ -36,6 +38,7 @@ public class RamenScript : MonoBehaviour
             attackTime = 0.0f;
             attackChecker = true;
             attackCollider.SetActive(true);
+            ramenAttackEffect.GetComponent<ParticleSystem>().Play();
         }
     }
 

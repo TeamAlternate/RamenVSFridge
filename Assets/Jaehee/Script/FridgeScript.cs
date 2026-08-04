@@ -8,6 +8,9 @@ public class FridgeScript : MonoBehaviour
     [SerializeField]
     GameObject attackCollider;
 
+    [SerializeField]
+    GameObject fridgeAttackEffect;
+
     private const float maxAttackTime = 2.0f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
@@ -38,6 +41,7 @@ public class FridgeScript : MonoBehaviour
             attackTime = 0.0f;
             attackChecker = true;
             attackCollider.SetActive(true);
+            fridgeAttackEffect.GetComponent<ParticleSystem>().Play();
         }
     }
 
