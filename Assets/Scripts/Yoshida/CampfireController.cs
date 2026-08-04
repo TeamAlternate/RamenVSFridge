@@ -17,6 +17,7 @@ public class CampfireController : MonoBehaviour
         lifeTime -= Time.deltaTime;
         if( lifeTime <= 0.0f )
         {
+            TimeManager.instance.ChangeTimeState(TimeState.Normal);
             Destroy(this.gameObject);
         }
     }

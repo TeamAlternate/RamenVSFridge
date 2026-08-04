@@ -66,7 +66,7 @@ public class RamenScript : MonoBehaviour
 
             if (reheatTimer >= reheatInterval)
             {
-                TimeManager.instance.ChangeTimeState(TimeState.Accele);
+                TimeManager.instance.ChangeTimeState(TimeState.Decele);
                 reheatTimer = 0f;
             }
         }
@@ -76,6 +76,7 @@ public class RamenScript : MonoBehaviour
     {
         if (other.CompareTag("Fire"))
         {
+            TimeManager.instance.ChangeTimeState(TimeState.Normal);
             reheatTimer = 0f;
         }
     }
