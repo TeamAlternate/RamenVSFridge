@@ -13,8 +13,8 @@ public class RamenScript : MonoBehaviour
     private float attackTime = 0.0f;
     private bool attackChecker = false;
 
-    private const float reheatInterval = 2f;
-    private float reheatTimer = 0f;
+    //private const float reheatInterval = 2f;
+    //private float reheatTimer = 0f;
 
     private void Awake()
     {
@@ -58,17 +58,11 @@ public class RamenScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Fire"))
         {
-            reheatTimer += Time.fixedDeltaTime;
-
-            if (reheatTimer >= reheatInterval)
-            {
-                TimeManager.instance.ChangeTimeState(TimeState.Decele);
-                reheatTimer = 0f;
-            }
+            TimeManager.instance.ChangeTimeState(TimeState.Decele);
         }
     }
 
@@ -77,7 +71,6 @@ public class RamenScript : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             TimeManager.instance.ChangeTimeState(TimeState.Normal);
-            reheatTimer = 0f;
         }
     }
 

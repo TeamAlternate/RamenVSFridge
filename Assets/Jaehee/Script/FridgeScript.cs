@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class FridgeScript : MonoBehaviour
 {
-    BoxCollider boxCollider;
+    CapsuleCollider boxCollider;
 
     [SerializeField]
     GameObject attackCollider;
@@ -18,7 +18,7 @@ public class FridgeScript : MonoBehaviour
     private void Awake()
     {
         // ground collider pivot
-        boxCollider = transform.parent.GetComponent<BoxCollider>();
+        boxCollider = transform.parent.GetComponent<CapsuleCollider>();
         boxCollider.center = new Vector3(0.0f, -0.5f, 0.0f);
 
         attackCollider = transform.GetChild(0).gameObject;
