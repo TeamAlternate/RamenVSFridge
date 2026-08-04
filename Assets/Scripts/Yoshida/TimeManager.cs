@@ -78,17 +78,17 @@ public class TimeManager : MonoBehaviour
         isTimeup = IsTimeupCheck();
 
         // デバッグ用(本来であれば時間ステートはラーメン側から行われる)
-        {
-            ChangeTimeState(TimeState.Normal);
-            if (Input.GetKey(DebugAccele))
-            {
-                ChangeTimeState(TimeState.Accele);
-            }
-            if (Input.GetKey(DebugDecele))
-            {
-                ChangeTimeState(TimeState.Decele);
-            }
-        }
+        //{
+        //    ChangeTimeState(TimeState.Normal);
+        //    if (Input.GetKey(DebugAccele))
+        //    {
+        //        ChangeTimeState(TimeState.Accele);
+        //    }
+        //    if (Input.GetKey(DebugDecele))
+        //    {
+        //        ChangeTimeState(TimeState.Decele);
+        //    }
+        //}
 
         if (!isTimeup)
         {

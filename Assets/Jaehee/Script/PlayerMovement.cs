@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("etc")]
     private bool isGround;
+    private readonly HashSet<Collider> groundColliders = new HashSet<Collider>();
 
     private Vector2 moveInput;
     private Rigidbody rb;
@@ -94,7 +96,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            isGround = true;
+            groundColliders.Add(collision.collider);
+            isGround = groundColliders.Count > 0;
         }
     }
 
@@ -102,7 +105,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            isGround = false;
+            groundColliders.Remove(collision.collider);
+            isGround = groundColliders.Count > 0;
         }
     }
 
