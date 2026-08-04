@@ -6,6 +6,7 @@ using UnityEngine;
 /// </summary>
 public class TitleStarter : MonoBehaviour
 {
+    [SerializeField] private FillCube fillCubeController;
     private GameObject titleManagerGameObject;
     private float startStayTime = 5.0f;
     private float startRemainingTime;
@@ -42,6 +43,7 @@ public class TitleStarter : MonoBehaviour
         if( isStayRamen && isStayFridge )
         {
             startRemainingTime -= Time.deltaTime;
+            fillCubeController.FillUpdate(1.0f - (startRemainingTime / startStayTime));
             if (startRemainingTime < 0.0f)
             {
                 StartGame();
@@ -50,6 +52,7 @@ public class TitleStarter : MonoBehaviour
         else
         {
             startRemainingTime = startStayTime;
+            fillCubeController.FillReset();
         }
 
         Debug.Log(startRemainingTime);

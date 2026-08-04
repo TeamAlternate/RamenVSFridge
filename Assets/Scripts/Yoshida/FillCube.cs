@@ -9,6 +9,8 @@ public class FillCube : MonoBehaviour
 
     public void FillUpdate(float percent)
     {
+        if( percent > 1.0f ) { percent = 1.0f; }
+
         Vector3 newScale = this.transform.localScale;
         newScale.y = percent * initScale;
         this.transform.localScale = newScale;
@@ -23,5 +25,10 @@ public class FillCube : MonoBehaviour
         this.transform.localScale = newScale;
 
         meshRenderer.material = inactiveMat;
+    }
+
+    private void Awake()
+    {
+        FillReset();
     }
 }
