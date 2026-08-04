@@ -17,6 +17,9 @@ public enum TimeState
 /// </summary>
 public class TimeManager : MonoBehaviour
 {
+
+    public static TimeManager instance { get; private set; }
+
     [SerializeField] private float timeMax = 180.0f;
     [SerializeField] private TimeRemainingsDisplay timeRemainingsDisplayGameObject;
     [SerializeField] private GameObject finishAnimationGameObject;
@@ -38,6 +41,15 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         Initialize();
 
         var timeRemainingsDisplay = Instantiate(timeRemainingsDisplayGameObject, this.transform);

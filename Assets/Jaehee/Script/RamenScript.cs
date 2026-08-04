@@ -6,9 +6,15 @@ public class RamenScript : MonoBehaviour
     [SerializeField]
     GameObject attackCollider;
 
-    private const float maxAttackTime = 1.0f;
+    [SerializeField]
+    GameObject ramenAttackEffect;
+
+    private const float maxAttackTime = 2.0f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
+
+    private const float reheatInterval = 2f;
+    private float reheatTimer = 0f;
 
     private void Awake()
     {
@@ -28,10 +34,11 @@ public class RamenScript : MonoBehaviour
     {
         if (input.isPressed && !attackChecker)
         {
-            Debug.Log("player attack");
+            Debug.Log("Ramen attack");
             attackTime = 0.0f;
             attackChecker = true;
             attackCollider.SetActive(true);
+            ramenAttackEffect.GetComponent<ParticleSystem>().Play();
         }
     }
 
@@ -51,5 +58,26 @@ public class RamenScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            reheatTimer += Time.fixedDeltaTime;
+
+            if (reheatTimer >= reheatInterval)
+            {
+                TimeManager.instance.ChangeTimeState(TimeState.Accele);
+                reheatTimer = 0f;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Fire"))
+        {
+            reheatTimer = 0f;
+        }
+    }
 
 }
