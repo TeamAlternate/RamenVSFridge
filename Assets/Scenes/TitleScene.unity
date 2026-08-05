@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8414131374593972229, guid: ff235d2262a26434487446a865ee64da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8414131374593972229, guid: ff235d2262a26434487446a865ee64da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 8414131374593972229, guid: ff235d2262a26434487446a865ee64da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startKey: 13
   toMainGameTransitionPrefab: {fileID: 8963216355167468439, guid: 1c405b7e63aef17438202eb641e72cc3, type: 3}
-  mainGameSceneName: MainGameScene
+  mainGameSceneName: MainScene
 --- !u!4 &2029721296
 Transform:
   m_ObjectHideFlags: 0

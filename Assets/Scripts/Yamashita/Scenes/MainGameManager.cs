@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Util.UserInterfaces;
 
@@ -7,6 +8,8 @@ namespace Scenes
     public class MainGameManager : MonoBehaviour
     {
         private static MainGameManager instance;
+
+        [SerializeField] private TimeManager timeManager;
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
         [SerializeField] private string endingSceneName;
 
@@ -27,6 +30,17 @@ namespace Scenes
         void Start()
         {
             SceneTransition.ExitTransition();
+            void InternalRoutine()
+            {
+                IEnumerator Internal2()
+                {
+
+                yield return new WaitForSeconds(2.0f);
+                FinishGame(new MatchResult() { resultType = MatchResult.ResultTypes.FridgeWin});
+                }
+                StartCoroutine(Internal2());
+            }
+            timeManager.OnTimeup += InternalRoutine;
         }
 
         // Update is called once per frame
