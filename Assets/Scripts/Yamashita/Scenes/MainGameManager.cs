@@ -8,6 +8,7 @@ namespace Scenes
     public class MainGameManager : MonoBehaviour
     {
         private static MainGameManager instance;
+        private static bool isGameSet;
 
         [SerializeField] private TimeManager timeManager;
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
@@ -18,6 +19,7 @@ namespace Scenes
             if (instance == null)
             {
                 instance = this;
+                isGameSet = false;
             }
             else
             {
@@ -51,6 +53,11 @@ namespace Scenes
 
         public static void FinishGame(MatchResult result)
         {
+            if(isGameSet)
+            {
+                return;
+            }
+            isGameSet = true;
             MatchResult.Update(result);
             instance.MoveToEnding();
         }
