@@ -8,7 +8,7 @@ public class TitleStarter : MonoBehaviour
 {
     [SerializeField] private FillCube fillCubeController;
     private GameObject titleManagerGameObject;
-    private float startStayTime = 5.0f;
+    private float startStayTime = 3.0f;
     private float startRemainingTime;
     private bool isStayRamen = false;
     private bool isStayFridge = false;
