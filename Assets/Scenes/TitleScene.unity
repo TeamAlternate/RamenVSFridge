@@ -691,7 +691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1119003233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -782,7 +782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7a37cfa0a623948ae3d71b5e656c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startKey: 13
   toMainGameTransitionPrefab: {fileID: 8963216355167468439, guid: 1c405b7e63aef17438202eb641e72cc3, type: 3}
   mainGameSceneName: MainScene
 --- !u!4 &2029721296

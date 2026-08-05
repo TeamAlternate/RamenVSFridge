@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: TeamAlternate
-  productName: "2026\u5E74\u5EA6_\u5236\u4F5C\u5B9F\u7FD2_\u30C1\u30FC\u30E0\u5236\u4F5C_Alternate"
+  productName: RamenVsFridge
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
