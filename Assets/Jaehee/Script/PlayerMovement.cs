@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveInput;
     private Rigidbody rb;
+    private Vector3 knockbackVelocity;
+    private float knockbackTimeRemaining;
 
     private int playerIndex;
     private GameObject currentCharacter;
@@ -68,6 +70,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void ApplyKnockback(Vector3 attackerPosition, float speed, float duration)
+    {
+        if (speed <= 0f || duration <= 0f)
+        {
+            return;
+        }
+
+        Vector3 direction = transform.position - attackerPosition;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude < 0.0001f)
+        {
+            direction = -transform.forward;
+        }
+
+        knockbackVelocity = direction.normalized * speed;
+        knockbackTimeRemaining = duration;
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -77,12 +98,23 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
 
-        Vector3 velocity = move * moveSpeed;
+        // ナックバック
+        bool isKnockedBack = knockbackTimeRemaining > 0f;
+        Vector3 velocity;
+        if (isKnockedBack)
+        {
+            velocity = knockbackVelocity;
+            knockbackTimeRemaining -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            velocity = move * moveSpeed;
+        }
         velocity.y = rb.linearVelocity.y;
 
         rb.linearVelocity = velocity;
 
-        if (move.sqrMagnitude > 0.01f && currentCharacter != null)
+        if (!isKnockedBack && move.sqrMagnitude > 0.01f && currentCharacter != null)
         {
             Quaternion targetRotation = Quaternion.LookRotation(move.normalized, Vector3.up);
 
