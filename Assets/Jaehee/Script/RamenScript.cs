@@ -24,6 +24,10 @@ public class RamenScript : MonoBehaviour
     private float specialAttackTime = 0.0f;
     private bool specialAttackChecker = false;
 
+    public float SpecialCooldownFill => specialAttackChecker
+        ? Mathf.Clamp01(specialAttackTime / maxSpecialTime)
+        : 1f;
+
     private void Awake()
     {
         if (attackCollider)
