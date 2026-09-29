@@ -5,29 +5,42 @@ public class RamenScript : MonoBehaviour
 {
     [SerializeField]
     GameObject attackCollider;
+    [SerializeField]
+    GameObject specialAttackCollider;
 
     [SerializeField]
     GameObject ramenAttackEffect;
+    [SerializeField]
+    GameObject ramenSpecialAttackEffect;
 
+    // çUåÇä÷òA
     private const float maxAttackTime = 2.0f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
 
-    //private const float reheatInterval = 2f;
-    //private float reheatTimer = 0f;
+    // ïKéEãZä÷òA
+    private const float maxSpecialTime = 30.0f;
+    private const float specialAttackDuration = 2.0f;
+    private float specialAttackTime = 0.0f;
+    private bool specialAttackChecker = false;
 
     private void Awake()
     {
-        attackCollider = transform.GetChild(0).gameObject;
         if (attackCollider)
         {
             attackCollider.SetActive(false);
+        }
+
+        if (specialAttackCollider)
+        {
+            specialAttackCollider.SetActive(false);
         }
     }
 
     private void Update()
     {
         AttackTimer();
+        SpecialAttackTimer();
     }
 
     public void OnAttack(InputValue input)
@@ -39,6 +52,18 @@ public class RamenScript : MonoBehaviour
             attackChecker = true;
             attackCollider.SetActive(true);
             ramenAttackEffect.GetComponent<ParticleSystem>().Play();
+        }
+    }
+
+    public void OnSpecialAttack(InputValue input)
+    {
+        if (input.isPressed && !specialAttackChecker)
+        {
+            Debug.Log("Ramen Special Attack");
+            specialAttackTime = 0.0f;
+            specialAttackChecker = true;
+            specialAttackCollider.SetActive(true);
+            ramenSpecialAttackEffect.GetComponent<ParticleSystem>().Play(true);
         }
     }
 
@@ -55,6 +80,26 @@ public class RamenScript : MonoBehaviour
         {
             attackChecker = false;
             attackCollider.SetActive(false);
+        }
+    }
+
+    private void SpecialAttackTimer()
+    {
+        if (!specialAttackChecker)
+        {
+            return;
+        }
+
+        specialAttackTime += Time.deltaTime;
+
+        if (specialAttackTime >= specialAttackDuration && specialAttackCollider.activeSelf)
+        {
+            specialAttackCollider.SetActive(false);
+        }
+
+        if (specialAttackTime >= maxSpecialTime)
+        {
+            specialAttackChecker = false;
         }
     }
 
