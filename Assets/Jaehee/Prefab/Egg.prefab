@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7183f38cf62ef2a4983c205be14be560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ToppingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &2986450471835796456
 Rigidbody:
   m_ObjectHideFlags: 0

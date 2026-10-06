@@ -6,7 +6,7 @@ public class ObstacleGenerater : MonoBehaviour
 {
     const float GENERATE_OFFSET = 10.0f;
     const float TIMERANGE_MIN = 45.0f;
-    const float TIMERANGE_MAX = 90.0f;
+    const float TIMERANGE_MAX = 60.0f;
 
     [SerializeField] private GameObject[] obstacles;
     [SerializeField] private float lifeTime = 20.0f;

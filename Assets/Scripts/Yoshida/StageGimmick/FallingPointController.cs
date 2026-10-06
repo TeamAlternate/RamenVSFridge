@@ -49,6 +49,10 @@ public class FallingPointController : MonoBehaviour
             }
             text.text = "";
             collider.enabled = true;
+            if (timer < -0.25f)
+            {
+                collider.enabled = false;
+            }
         }
         else if( timer < 1.0f)
         {
@@ -113,6 +117,17 @@ public class FallingPointController : MonoBehaviour
         if (isRamen || isFridge)
         {
             playerHitEvent.Invoke();
+            PlayerStun(other);
+        }
+    }
+
+    private void PlayerStun(Collider other)
+    {
+        PlayerMovement player = other.GetComponentInParent<PlayerMovement>();
+        if (player != null)
+        {
+            Debug.Log("ƒXƒ^ƒ“");
+            player.Stun(stunDuration);
         }
     }
 }

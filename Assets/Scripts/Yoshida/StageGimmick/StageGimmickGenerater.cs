@@ -22,7 +22,7 @@ public class StageGimmickGenerater : MonoBehaviour
     [SerializeField] private BoxFeverController boxFeverGimmick;
     [SerializeField] bool isEnableBoxFever = true;
 
-    GimmickSetting fallingSetting = new GimmickSetting( 5.0f, 15.0f );
+    GimmickSetting fallingSetting = new GimmickSetting( 1.5f, 7.0f );
     GimmickSetting boxFeverSetting = new GimmickSetting( 15.0f, 30.0f );
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
