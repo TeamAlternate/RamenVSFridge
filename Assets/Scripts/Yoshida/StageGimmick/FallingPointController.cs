@@ -60,7 +60,7 @@ public class FallingPointController : MonoBehaviour
         }
         else
         {
-            UpdateIntText((int)timer);
+            UpdateFloatText(timer);
         }
     }
 

@@ -50,7 +50,7 @@ public class ObstacleGenerater : MonoBehaviour
         Vector3 transform = Vector3.zero;
         transform.y = GENERATE_OFFSET;
 
-        int num = UnityEngine.Random.Range(0, obstacles.Length - 1);
+        int num = UnityEngine.Random.Range(0, obstacles.Length);
         obstacle = Instantiate(obstacles[num], this.transform);
         obstacle.transform.position = transform;
 
