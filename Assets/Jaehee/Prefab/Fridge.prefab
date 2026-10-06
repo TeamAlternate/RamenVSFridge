@@ -124,12 +124,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6eb45351360631c448f07c85913c75d6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   attackCollider: {fileID: 8529381507622306537}
   specialAttackCollider: {fileID: 6740098236564335042}
   fridgeAttackEffect: {fileID: 4962594743359170561}
-  fridgeSpecialAttackEffect: {fileID: 7182913790987654321}
+  fridgeSpecialAttackEffect: {fileID: 4445161554979731323}
 --- !u!1 &6740098236564335042
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dce9ca70266f21d489b0750694cd34b5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   knockbackSpeed: 12
   knockbackDuration: 0.4
 --- !u!1 &8529381507622306537
@@ -282,9 +282,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35ef68a5a23c7c14a8a122f18ea8ac63, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  knockbackSpeed: 8
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackSpeed: 14
   knockbackDuration: 0.25
 --- !u!1001 &974694420809173169
 PrefabInstance:
@@ -584,7 +584,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4984980826245493072, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
   m_PrefabInstance: {fileID: 8773626409680590750}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7182913790987654321 stripped
+--- !u!1 &4445161554979731323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4932088507883938021, guid: 0e5709a7ddb77924090c112cf73bb98a, type: 3}
   m_PrefabInstance: {fileID: 8773626409680590750}
@@ -604,8 +604,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
