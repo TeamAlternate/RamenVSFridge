@@ -55,7 +55,7 @@ public class FridgeScript : MonoBehaviour
 
     public void OnAttack(InputValue input)
     {
-        if (input.isPressed && !attackChecker)
+        if (input.isPressed && !attackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Fridge attack");
             attackTime = 0.0f;
@@ -67,7 +67,7 @@ public class FridgeScript : MonoBehaviour
 
     public void OnSpecialAttack(InputValue input)
     {
-        if (input.isPressed && !specialAttackChecker)
+        if (input.isPressed && !specialAttackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Fridge Special Attack");
             specialAttackTime = 0.0f;
@@ -75,6 +75,14 @@ public class FridgeScript : MonoBehaviour
             specialAttackCollider.SetActive(true);
             fridgeSpecialAttackEffect.GetComponent<ParticleSystem>().Play(true);
         }
+    }
+
+    public void CancelAttacks()
+    {
+        attackCollider.SetActive(false);
+        specialAttackCollider.SetActive(false);
+        fridgeAttackEffect.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        fridgeSpecialAttackEffect.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     private void AttackTimer()

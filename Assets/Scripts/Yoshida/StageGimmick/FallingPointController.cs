@@ -25,7 +25,7 @@ public class FallingPointController : MonoBehaviour
     /// <summary>
     /// プレイヤー衝突時のメソッド呼び出し
     /// </summary>
-    public UnityEvent playerHitEvent;
+    //public UnityEvent playerHitEvent;
 
 
     public void Initialize()
@@ -91,6 +91,7 @@ public class FallingPointController : MonoBehaviour
         generateBox.transform.localScale = scale;
         generateBox.AddComponent<Rigidbody>();
         generateBox.AddComponent<CapsuleCollider>();
+
     }
 
     private void UpdateIntText(int time)
@@ -103,15 +104,21 @@ public class FallingPointController : MonoBehaviour
         text.text = string.Format("{0:F1}", time);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        bool isRamen = other.gameObject.tag == "Ramen";
-        bool isFridge = other.gameObject.tag == "Fridge";
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    bool isRamen = other.gameObject.tag == "Ramen";
+    //    bool isFridge = other.gameObject.tag == "Fridge";
 
-        if (isRamen || isFridge)
-        {
-            playerHitEvent.Invoke();
-            Debug.Log("Player Hited");
-        }
-    }
+    //    if (isRamen || isFridge)
+    //    {
+    //        if (playerHitEvent.IsUnityNull())
+    //        {
+    //            playerHitEvent.Invoke();
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("Player Hited");
+    //        }
+    //    }
+    //}
 }
