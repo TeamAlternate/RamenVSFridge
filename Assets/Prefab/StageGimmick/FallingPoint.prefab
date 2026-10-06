@@ -196,10 +196,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 3
   radius: 1.5
+  stunDuration: 2
   text: {fileID: 8211535248041532524}
   circle: {fileID: 569679545970463605}
   collider: {fileID: 5669584653309883057}
-  box: {fileID: 3204321756382455845, guid: bcb05917b2d144e46b5b5982ec3f2cd0, type: 3}
+  box: {fileID: 3204321756382455845, guid: 7e10ed6b94d647b459f4985d02dfe0dd, type: 3}
   playerHitEvent:
     m_PersistentCalls:
       m_Calls:

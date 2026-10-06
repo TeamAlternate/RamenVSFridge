@@ -112,15 +112,7 @@ public class FallingPointController : MonoBehaviour
 
         if (isRamen || isFridge)
         {
-            if (playerHitEvent.IsUnityNull())
-            {
-                playerHitEvent.Invoke();
-                other.GetComponent<PlayerMovement>().Stun(stunDuration);
-            }
-            else
-            {
-                Debug.Log("Player Hited");
-            }
+            playerHitEvent.Invoke();
         }
     }
 }
