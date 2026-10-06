@@ -13,6 +13,7 @@ public class FallingPointController : MonoBehaviour
 
     [SerializeField] private float timer = 5.0f;
     [SerializeField] private float radius = 1.5f;
+    [SerializeField] private float stunDuration = 2.0f;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private SpriteRenderer circle;
     [SerializeField] private SphereCollider collider;
@@ -25,7 +26,7 @@ public class FallingPointController : MonoBehaviour
     /// <summary>
     /// プレイヤー衝突時のメソッド呼び出し
     /// </summary>
-    //public UnityEvent playerHitEvent;
+    public UnityEvent playerHitEvent;
 
 
     public void Initialize()
@@ -104,21 +105,22 @@ public class FallingPointController : MonoBehaviour
         text.text = string.Format("{0:F1}", time);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    bool isRamen = other.gameObject.tag == "Ramen";
-    //    bool isFridge = other.gameObject.tag == "Fridge";
+    private void OnTriggerEnter(Collider other)
+    {
+        bool isRamen = other.gameObject.tag == "Ramen";
+        bool isFridge = other.gameObject.tag == "Fridge";
 
-    //    if (isRamen || isFridge)
-    //    {
-    //        if (playerHitEvent.IsUnityNull())
-    //        {
-    //            playerHitEvent.Invoke();
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("Player Hited");
-    //        }
-    //    }
-    //}
+        if (isRamen || isFridge)
+        {
+            if (playerHitEvent.IsUnityNull())
+            {
+                playerHitEvent.Invoke();
+                other.GetComponent<PlayerMovement>().Stun(stunDuration);
+            }
+            else
+            {
+                Debug.Log("Player Hited");
+            }
+        }
+    }
 }
