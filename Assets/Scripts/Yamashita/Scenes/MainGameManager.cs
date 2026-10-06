@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Util.UserInterfaces;
 
@@ -7,6 +8,9 @@ namespace Scenes
     public class MainGameManager : MonoBehaviour
     {
         private static MainGameManager instance;
+        private static bool isGameSet;
+
+        [SerializeField] private TimeManager timeManager;
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
         [SerializeField] private string endingSceneName;
 
@@ -15,6 +19,7 @@ namespace Scenes
             if (instance == null)
             {
                 instance = this;
+                isGameSet = false;
             }
             else
             {
@@ -27,6 +32,17 @@ namespace Scenes
         void Start()
         {
             SceneTransition.ExitTransition();
+            void InternalRoutine()
+            {
+                IEnumerator Internal2()
+                {
+
+                yield return new WaitForSeconds(2.0f);
+                FinishGame(new MatchResult() { resultType = MatchResult.ResultTypes.FridgeWin});
+                }
+                StartCoroutine(Internal2());
+            }
+            timeManager.OnTimeup += InternalRoutine;
         }
 
         // Update is called once per frame
@@ -37,6 +53,11 @@ namespace Scenes
 
         public static void FinishGame(MatchResult result)
         {
+            if(isGameSet)
+            {
+                return;
+            }
+            isGameSet = true;
             MatchResult.Update(result);
             instance.MoveToEnding();
         }

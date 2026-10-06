@@ -6,7 +6,6 @@ namespace Scenes
 
     public class TitleManager : MonoBehaviour
     {
-        [SerializeField] private KeyCode startKey;
         [SerializeField] private SceneTransition toMainGameTransitionPrefab;
         [SerializeField] private string mainGameSceneName;
 
@@ -21,10 +20,6 @@ namespace Scenes
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(startKey))
-            {
-                StartGame();
-            }
         }
 
         public void StartGame()
