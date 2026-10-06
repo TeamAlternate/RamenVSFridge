@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Util.UserInterfaces;
 
 namespace Scenes
@@ -13,6 +14,8 @@ namespace Scenes
         [SerializeField] private TimeManager timeManager;
         [SerializeField] private SceneTransition toEndingTransitionPrefab;
         [SerializeField] private string endingSceneName;
+
+        [SerializeField] private UnityEvent onGameSet;
 
         private void Awake()
         {
@@ -60,6 +63,7 @@ namespace Scenes
             isGameSet = true;
             MatchResult.Update(result);
             instance.MoveToEnding();
+            instance.onGameSet.Invoke();
         }
 
         public void MoveToEnding()
