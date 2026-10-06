@@ -2,9 +2,15 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.LowLevelPhysics;
+using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class FallingPointController : MonoBehaviour
 {
+    const float GIMMICK_OFFSET = 0.2f;
+    const float RANGE_MIN = -3.0f;
+    const float RANGE_MAX = 3.0f;
+
     [SerializeField] private float timer = 5.0f;
     [SerializeField] private float radius = 1.5f;
     [SerializeField] private TextMeshPro text;
@@ -19,11 +25,13 @@ public class FallingPointController : MonoBehaviour
     /// <summary>
     /// プレイヤー衝突時のメソッド呼び出し
     /// </summary>
-    public Action playerHitEvent;
+    public UnityEvent playerHitEvent;
 
-    private void Awake()
+
+    public void Initialize()
     {
         collider.enabled = false;
+        SetGimmickPosition();
     }
 
     private void Update()
@@ -54,6 +62,16 @@ public class FallingPointController : MonoBehaviour
         {
             UpdateIntText((int)timer);
         }
+    }
+
+    private void SetGimmickPosition()
+    {
+        Vector3 newPosition = Vector3.zero;
+        newPosition.x = UnityEngine.Random.Range(RANGE_MIN, RANGE_MAX);
+        newPosition.y = GIMMICK_OFFSET;
+        newPosition.z = UnityEngine.Random.Range(RANGE_MIN, RANGE_MAX);
+
+        this.transform.position = newPosition;
     }
 
     private void GenerateBox()
@@ -92,7 +110,14 @@ public class FallingPointController : MonoBehaviour
 
         if (isRamen || isFridge)
         {
-            playerHitEvent.Invoke();
+            if( playerHitEvent.IsUnityNull())
+            {
+                playerHitEvent.Invoke();
+            }
+            else
+            {
+                Debug.Log("Player Hited");
+            }
         }
     }
 }
