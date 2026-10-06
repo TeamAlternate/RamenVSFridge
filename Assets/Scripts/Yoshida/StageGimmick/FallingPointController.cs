@@ -49,6 +49,10 @@ public class FallingPointController : MonoBehaviour
             }
             text.text = "";
             collider.enabled = true;
+            if (timer < -0.25f)
+            {
+                collider.enabled = false;
+            }
         }
         else if( timer < 1.0f)
         {

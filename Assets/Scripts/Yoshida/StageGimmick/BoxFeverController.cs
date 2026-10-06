@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class BoxFeverController : MonoBehaviour
 {
-    [SerializeField] private GameObject boxPrefab;
+    [SerializeField] private GameObject[] boxPrefab;
     [SerializeField] private int generateQuantity = 20;
     [SerializeField] private float lifeTime = 10.0f;
     [SerializeField] private PhysicsMaterial physics;
@@ -84,7 +84,8 @@ public class BoxFeverController : MonoBehaviour
         Vector3 scale = new Vector3(2.5f, 2.5f, 2.5f);
 
         // boxÇÃèâä˙âª
-        GameObject generateBox = Instantiate(boxPrefab, this.transform);
+        int num = UnityEngine.Random.Range(0, boxPrefab.Length);
+        GameObject generateBox = Instantiate(boxPrefab[num], this.transform);
         generateBox.transform.position = boxPosition;
         generateBox.transform.rotation = boxRotation;
         generateBox.transform.localScale = scale;
