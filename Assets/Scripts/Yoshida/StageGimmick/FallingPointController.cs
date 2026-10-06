@@ -110,14 +110,8 @@ public class FallingPointController : MonoBehaviour
 
         if (isRamen || isFridge)
         {
-            if( playerHitEvent.IsUnityNull())
-            {
-                playerHitEvent.Invoke();
-            }
-            else
-            {
-                Debug.Log("Player Hited");
-            }
+            playerHitEvent.Invoke();
+            Debug.Log("Player Hited");
         }
     }
 }
