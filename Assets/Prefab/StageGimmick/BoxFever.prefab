@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6169355951133146864
+--- !u!1 &4000133997429126793
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1784969131352254287}
-  - component: {fileID: 8920041482041403328}
+  - component: {fileID: 4305726801551326583}
+  - component: {fileID: 4022687181406716256}
   m_Layer: 0
-  m_Name: GimmickGenerater
+  m_Name: BoxFever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1784969131352254287
+--- !u!4 &4305726801551326583
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169355951133146864}
+  m_GameObject: {fileID: 4000133997429126793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,19 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8920041482041403328
+--- !u!114 &4022687181406716256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169355951133146864}
+  m_GameObject: {fileID: 4000133997429126793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05280e6e6c59cfb44b95b9aa0ddaacbb, type: 3}
+  m_Script: {fileID: 11500000, guid: b023f568ce496714f84838743c165d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingGimmick: {fileID: 3699722650631607137, guid: 802d82d2d0950054c8a7db19ceb8e6ea, type: 3}
-  isEnableFalling: 1
-  boxFeverGimmick: {fileID: 4022687181406716256, guid: 0bcf7daef097f894e9fccab44226c22c, type: 3}
-  isEnableBoxFever: 1
+  boxPrefab: {fileID: 3204321756382455845, guid: bcb05917b2d144e46b5b5982ec3f2cd0, type: 3}
+  generateQuantity: 20
+  lifeTime: 7
+  physics: {fileID: 13400000, guid: 63342d914b80fe845865a2d07b0bc392, type: 2}
