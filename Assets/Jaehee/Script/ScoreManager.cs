@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField]
     private int toppingScore = 0;
-    private const int maxToppintScore = 4;
+    private const int maxToppintScore = 20;
 
     private void Awake()
     {
@@ -43,6 +43,7 @@ public class ScoreManager : MonoBehaviour
         {
             return;
         }
-        //Debug.Log("RamenWin");
+
+        Scenes.MainGameManager.FinishGame(new MatchResult() { resultType = MatchResult.ResultTypes.RamenWin });
     }
 }
