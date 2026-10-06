@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("etc")]
     private bool isGround;
     private readonly HashSet<Collider> groundColliders = new HashSet<Collider>();
+    private float stunEndTime;
+    public bool IsStunned => Time.time < stunEndTime;
 
     private Vector2 moveInput;
     private Rigidbody rb;
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputValue input)
     {
-        if (input.isPressed && isGround)
+        if (input.isPressed && isGround && !IsStunned)
         {
             rb.linearVelocity = new Vector3(
                 rb.linearVelocity.x,
@@ -89,6 +91,25 @@ public class PlayerMovement : MonoBehaviour
         knockbackTimeRemaining = duration;
     }
 
+    public void Stun(float duration)
+    {
+        if (duration <= 0f)
+        {
+            return;
+        }
+
+        stunEndTime = Mathf.Max(stunEndTime, Time.time + duration);
+        knockbackTimeRemaining = 0f;
+        knockbackVelocity = Vector3.zero;
+        rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+
+        if (currentCharacter != null)
+        {
+            currentCharacter.GetComponent<RamenScript>()?.CancelAttacks();
+            currentCharacter.GetComponent<FridgeScript>()?.CancelAttacks();
+        }
+    }
+
     private void FixedUpdate()
     {
         Move();
@@ -96,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        if (IsStunned)
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
+
         Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
 
         // ナックバック
