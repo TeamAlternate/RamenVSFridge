@@ -348,9 +348,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(move.normalized, Vector3.up);
 
-            currentCharacter.transform.rotation =
-                Quaternion.RotateTowards( currentCharacter.transform.rotation,
-                    targetRotation,  300.0f * Time.fixedDeltaTime );
+            currentCharacter.transform.rotation = targetRotation;
         }
     }
 
