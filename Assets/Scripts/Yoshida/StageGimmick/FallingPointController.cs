@@ -13,6 +13,7 @@ public class FallingPointController : MonoBehaviour
 
     [SerializeField] private float timer = 5.0f;
     [SerializeField] private float radius = 1.5f;
+    [SerializeField] private float stunDuration = 2.0f;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private SpriteRenderer circle;
     [SerializeField] private SphereCollider collider;
@@ -25,7 +26,7 @@ public class FallingPointController : MonoBehaviour
     /// <summary>
     /// プレイヤー衝突時のメソッド呼び出し
     /// </summary>
-    //public UnityEvent playerHitEvent;
+    public UnityEvent playerHitEvent;
 
 
     public void Initialize()
@@ -48,6 +49,10 @@ public class FallingPointController : MonoBehaviour
             }
             text.text = "";
             collider.enabled = true;
+            if (timer < -0.25f)
+            {
+                collider.enabled = false;
+            }
         }
         else if( timer < 1.0f)
         {
@@ -60,7 +65,7 @@ public class FallingPointController : MonoBehaviour
         }
         else
         {
-            UpdateIntText((int)timer);
+            UpdateFloatText(timer);
         }
     }
 
@@ -104,21 +109,25 @@ public class FallingPointController : MonoBehaviour
         text.text = string.Format("{0:F1}", time);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    bool isRamen = other.gameObject.tag == "Ramen";
-    //    bool isFridge = other.gameObject.tag == "Fridge";
+    private void OnTriggerEnter(Collider other)
+    {
+        bool isRamen = other.gameObject.tag == "Ramen";
+        bool isFridge = other.gameObject.tag == "Fridge";
 
-    //    if (isRamen || isFridge)
-    //    {
-    //        if (playerHitEvent.IsUnityNull())
-    //        {
-    //            playerHitEvent.Invoke();
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("Player Hited");
-    //        }
-    //    }
-    //}
+        if (isRamen || isFridge)
+        {
+            playerHitEvent.Invoke();
+            PlayerStun(other);
+        }
+    }
+
+    private void PlayerStun(Collider other)
+    {
+        PlayerMovement player = other.GetComponentInParent<PlayerMovement>();
+        if (player != null)
+        {
+            Debug.Log("スタン");
+            player.Stun(stunDuration);
+        }
+    }
 }

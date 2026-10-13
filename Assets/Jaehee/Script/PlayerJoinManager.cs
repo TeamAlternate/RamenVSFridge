@@ -54,6 +54,19 @@ public class PlayerJoinManager : MonoBehaviour
                 movement.SetCharacter(characterPrefabs[index]);
             }
         }
+
+        if( index + 1 == 2 )
+        {
+            GameObject time = GameObject.Find("TimeManager");
+            if (time != null)
+            {
+                TimeManager timeManager = time.GetComponent<TimeManager>();
+                if (timeManager != null)
+                {
+                    timeManager.StartTimer();
+                }
+            }
+        }
     }
 
 }

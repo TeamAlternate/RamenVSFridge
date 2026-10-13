@@ -75,8 +75,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1abc6f29ae853d34b83901c1c61d01ec, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   knockbackSpeed: 12
   knockbackDuration: 0.4
 --- !u!1 &3220920602693805996
@@ -109,8 +109,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.35, y: 0.49, z: 0.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3619283949377677716}
   - {fileID: 5386351766423666105}
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c33f528321e14c488eedf01dd03b8b3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   attackCollider: {fileID: 6835227668930087523}
   specialAttackCollider: {fileID: 1899819491200397409}
   ramenAttackEffect: {fileID: 8886486529591507387}
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 836f4a5d4834dd84caf5b3dc5b4d7349, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   knockbackSpeed: 8
   knockbackDuration: 0.25
 --- !u!1001 &1088341074537763207

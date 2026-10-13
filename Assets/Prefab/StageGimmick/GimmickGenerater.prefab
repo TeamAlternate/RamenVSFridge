@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallingGimmick: {fileID: 3699722650631607137, guid: 802d82d2d0950054c8a7db19ceb8e6ea, type: 3}
   isEnableFalling: 1
-  gimmickIntervalMin: 5
-  gimmickIntervalMax: 15
+  boxFeverGimmick: {fileID: 4022687181406716256, guid: 0bcf7daef097f894e9fccab44226c22c, type: 3}
+  isEnableBoxFever: 1

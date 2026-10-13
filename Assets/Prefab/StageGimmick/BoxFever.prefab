@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4000133997429126793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4305726801551326583}
+  - component: {fileID: 4022687181406716256}
+  m_Layer: 0
+  m_Name: BoxFever
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4305726801551326583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000133997429126793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4022687181406716256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000133997429126793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b023f568ce496714f84838743c165d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxPrefab:
+  - {fileID: 3204321756382455845, guid: bcb05917b2d144e46b5b5982ec3f2cd0, type: 3}
+  - {fileID: 8834247624133828260, guid: 94f39b72aea36cd4a8a5a1f6e3e18956, type: 3}
+  - {fileID: 7909146883696211788, guid: 7afb4c784ba892d45bc692a1404f9375, type: 3}
+  - {fileID: 2391890651996864558, guid: b0011b2e96ade7c4ca184f76b88844cf, type: 3}
+  - {fileID: 5545525714018906411, guid: 1c553344e48da724fba8930db8c7481b, type: 3}
+  generateQuantity: 25
+  lifeTime: 7
+  physics: {fileID: 13400000, guid: 63342d914b80fe845865a2d07b0bc392, type: 2}

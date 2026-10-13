@@ -29,6 +29,7 @@ public class TimeManager : MonoBehaviour
     private float decelerate = -0.5f;
     private TimeState state = TimeState.Normal;
     private bool isTimeup = false;
+    private bool isStarted = false;
 
     private KeyCode DebugAccele = KeyCode.F1;
     private KeyCode DebugDecele = KeyCode.F2;
@@ -71,10 +72,23 @@ public class TimeManager : MonoBehaviour
     }
 
     /// <summary>
+    /// タイマースタート
+    /// </summary>
+    public void StartTimer()
+    {
+        isStarted = true;
+    }
+
+    /// <summary>
     /// 更新処理
     /// </summary>
     private void Update()
     {
+        if( !isStarted )
+        {
+            return;
+        }
+
         isTimeup = IsTimeupCheck();
 
         // デバッグ用(本来であれば時間ステートはラーメン側から行われる)
@@ -174,6 +188,6 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     private void PlayFinishAnimation()
     {
-        Instantiate(finishAnimationGameObject, this.transform);
+        // Instantiate(finishAnimationGameObject, this.transform);
     }
 }
