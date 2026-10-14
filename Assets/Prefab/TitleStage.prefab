@@ -24716,7 +24716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148039052418240852, guid: 23a1078dd06f22e459d58152506a1e04, type: 3}
       propertyPath: m_Name
-      value: Computer
+      value: Borad1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24797,7 +24797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148039052418240852, guid: 23a1078dd06f22e459d58152506a1e04, type: 3}
       propertyPath: m_Name
-      value: Computer (1)
+      value: Borad2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

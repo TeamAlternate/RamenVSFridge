@@ -70,6 +70,15 @@ public class PlayerJoinManager : MonoBehaviour
             }
         }
 
+        GameObject borad = GameObject.Find("Borad3");
+        if( index + 1 == 1 )
+        {
+            if( borad != null )
+            {
+                borad.GetComponent<BoradController>().ChangeMaterial();
+            }
+        }
+
         if( index + 1 == 2 )
         {
             GameObject time = GameObject.Find("TimeManager");
@@ -80,6 +89,11 @@ public class PlayerJoinManager : MonoBehaviour
                 {
                     timeManager.StartTimer();
                 }
+            }
+
+            if( borad != null )
+            {
+                Destroy(borad.gameObject);
             }
         }
     }
