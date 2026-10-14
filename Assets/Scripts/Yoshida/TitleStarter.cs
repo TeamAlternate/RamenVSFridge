@@ -54,8 +54,6 @@ public class TitleStarter : MonoBehaviour
             startRemainingTime = startStayTime;
             fillCubeController.FillReset();
         }
-
-        Debug.Log(startRemainingTime);
     }
 
     private void StartGame()
