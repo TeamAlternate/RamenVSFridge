@@ -8,16 +8,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Move")]
     [SerializeField] private float moveSpeed = 5f;
 
-    [Header("Jump")]
-    [SerializeField] private float jumpPower = 5f;
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed = 10f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1.5f;
 
     [Header("Stun Visual")]
     [SerializeField] private float blinkInterval = 0.25f;
     [Range(0f, 1f)] [SerializeField] private float blinkMinOpacity = 0.1f;
 
-    [Header("etc")]
-    private bool isGround;
-    private readonly HashSet<Collider> groundColliders = new HashSet<Collider>();
     private float stunEndTime;
     public bool IsStunned => Time.time < stunEndTime;
 
@@ -25,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 knockbackVelocity;
     private float knockbackTimeRemaining;
+    private Vector3 lastMoveDirection = Vector3.forward;
+    private Vector3 dashDirection;
+    private float dashTimeRemaining;
+    private float nextDashTime;
 
     private int playerIndex;
     private GameObject currentCharacter;
@@ -55,8 +58,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        isGround = false;
-
         CameraController.AddTarget(gameObject);
     }
 
@@ -95,15 +96,23 @@ public class PlayerMovement : MonoBehaviour
         moveInput = input.Get<Vector2>();
     }
 
-    public void OnJump(InputValue input)
+    public void OnDash(InputValue input)
     {
-        if (input.isPressed && isGround && !IsStunned)
+        if (!input.isPressed || IsStunned || knockbackTimeRemaining > 0f ||
+            dashTimeRemaining > 0f || Time.time < nextDashTime ||
+            dashSpeed <= 0f || dashDuration <= 0f)
         {
-            rb.linearVelocity = new Vector3(
-                rb.linearVelocity.x,
-                jumpPower,
-                rb.linearVelocity.z
-            );
+            return;
+        }
+
+        Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
+        dashDirection = move.sqrMagnitude > 0.01f ? move.normalized : lastMoveDirection;
+        dashTimeRemaining = dashDuration;
+        nextDashTime = Time.time + dashDuration + Mathf.Max(0f, dashCooldown);
+
+        if (currentCharacter != null)
+        {
+            currentCharacter.transform.rotation = Quaternion.LookRotation(dashDirection, Vector3.up);
         }
     }
 
@@ -124,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
 
         knockbackVelocity = direction.normalized * speed;
         knockbackTimeRemaining = duration;
+        dashTimeRemaining = 0f;
     }
 
     public void Stun(float duration)
@@ -143,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
         stunEndTime = Mathf.Max(stunEndTime, Time.time + duration);
         knockbackTimeRemaining = 0f;
         knockbackVelocity = Vector3.zero;
+        dashTimeRemaining = 0f;
         rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
 
         if (currentCharacter != null)
@@ -174,6 +185,7 @@ public class PlayerMovement : MonoBehaviour
     {
         RestoreCharacterVisuals();
         blinkActive = false;
+        dashTimeRemaining = 0f;
     }
 
     private void CacheCharacterMaterials()
@@ -327,14 +339,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
+        if (move.sqrMagnitude > 0.01f)
+        {
+            lastMoveDirection = move.normalized;
+        }
 
-        // ナックバック
+        // 繝翫ャ繧ｯ繝舌ャ繧ｯ
         bool isKnockedBack = knockbackTimeRemaining > 0f;
+        bool isDashing = dashTimeRemaining > 0f;
         Vector3 velocity;
         if (isKnockedBack)
         {
             velocity = knockbackVelocity;
             knockbackTimeRemaining -= Time.fixedDeltaTime;
+        }
+        else if (isDashing)
+        {
+            velocity = dashDirection * dashSpeed;
+            dashTimeRemaining -= Time.fixedDeltaTime;
         }
         else
         {
@@ -344,29 +366,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = velocity;
 
-        if (!isKnockedBack && move.sqrMagnitude > 0.01f && currentCharacter != null)
+        if (!isKnockedBack && !isDashing && move.sqrMagnitude > 0.01f && currentCharacter != null)
         {
             Quaternion targetRotation = Quaternion.LookRotation(move.normalized, Vector3.up);
 
             currentCharacter.transform.rotation = targetRotation;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            groundColliders.Add(collision.collider);
-            isGround = groundColliders.Count > 0;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider.CompareTag("Ground"))
-        {
-            groundColliders.Remove(collision.collider);
-            isGround = groundColliders.Count > 0;
         }
     }
 
