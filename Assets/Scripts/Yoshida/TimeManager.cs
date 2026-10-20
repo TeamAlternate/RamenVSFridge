@@ -32,7 +32,7 @@ public class TimeManager : MonoBehaviour
     private bool isStarted = false;
 
     // c‚èŠÔ‚ÌŒ¸­‰Á‘¬’†‚ÉŒ¸‚éÅ‘å•b”
-    private float accelerateElapsedMax = 20.0f;
+    [SerializeField] private float accelerateElapsedMax = 30.0f;
 
     // c‚èŠÔ‚ÌŒ¸­‰Á‘¬’†‚ÉŒ¸‚Á‚½•b”
     private float accelerateElapsedTime = 0.0f;
