@@ -38,6 +38,11 @@ namespace UserInterfaces
 
         public void OnAddTopping(GameObject toppingVisual)
         {
+            if(currentToppingCount >= maxInstanceCount)
+            {
+                Destroy(toppingVisual);
+                return;
+            }
             elements[currentToppingCount].SetAppearence(toppingVisual);
             elements[currentToppingCount].transform.localPosition = alignmentPivot.localPosition + offsetPerTopping * currentToppingCount;
             elements[currentToppingCount].SetVisible(true);
