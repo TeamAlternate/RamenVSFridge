@@ -22,7 +22,7 @@ public class FridgeScript : MonoBehaviour
 
     // •KŽE‹ZŠÖ˜A
     private const float maxSpecialTime = 30.0f;
-    private const float specialAttackDuration = 2.0f;
+    private const float specialAttackDuration = 3.75f;
     private float specialAttackTime = 0.0f;
     private bool specialAttackChecker = false;
 
