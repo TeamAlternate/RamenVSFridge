@@ -11,7 +11,7 @@ public class FridgeSpecialAttack : MonoBehaviour
         hasHit = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (hasHit || !other.CompareTag("Ramen"))
         {

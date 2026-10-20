@@ -24,8 +24,6 @@ public class CloudMove : MonoBehaviour
         newPosition.y += moveAmount * ( 1.0f - percent );
 
         image.rectTransform.position = newPosition;
-
-        Debug.Log($"percent : {percent}");
     }
 
     public void VisibleChange(bool cloud, bool down, bool up)

@@ -196,6 +196,22 @@ public class TimeManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 残り時間回復
+    /// </summary>
+    /// <param name="percent">
+    /// 回復量(パーセント)
+    /// </param>
+    public void AddTime(float percent)
+    {
+        float addTime = percent * timeMax;
+        time += addTime;
+        if( time > timeMax )
+        {
+            time = timeMax;
+        }
+    }
+
+    /// <summary>
     /// 終了時アニメーション
     /// </summary>
     private void PlayFinishAnimation()
