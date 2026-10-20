@@ -87,8 +87,7 @@ public class FallingPointController : MonoBehaviour
         boxRotation.x = UnityEngine.Random.Range(0f, 360f);
         boxRotation.y = UnityEngine.Random.Range(0f, 360f);
         boxRotation.z = UnityEngine.Random.Range(0f, 360f);
-        Vector3 scale = Vector3.one;
-        scale += Vector3.one;
+        Vector3 scale = new Vector3(7.0f, 7.0f, 7.0f);
 
         generateBox = Instantiate(box, this.transform);
         generateBox.transform.position = boxPosition;
