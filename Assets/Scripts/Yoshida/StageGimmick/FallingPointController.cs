@@ -12,7 +12,6 @@ public class FallingPointController : MonoBehaviour
     const float RANGE_MAX = 3.0f;
 
     [SerializeField] private float timer = 5.0f;
-    [SerializeField] private float radius = 1.5f;
     [SerializeField] private float stunDuration = 2.0f;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private SpriteRenderer circle;
@@ -87,8 +86,7 @@ public class FallingPointController : MonoBehaviour
         boxRotation.x = UnityEngine.Random.Range(0f, 360f);
         boxRotation.y = UnityEngine.Random.Range(0f, 360f);
         boxRotation.z = UnityEngine.Random.Range(0f, 360f);
-        Vector3 scale = Vector3.one;
-        scale += Vector3.one;
+        Vector3 scale = new Vector3(7.0f, 7.0f, 7.0f);
 
         generateBox = Instantiate(box, this.transform);
         generateBox.transform.position = boxPosition;

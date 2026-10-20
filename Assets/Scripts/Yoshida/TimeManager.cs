@@ -20,19 +20,22 @@ public class TimeManager : MonoBehaviour
 
     public static TimeManager instance { get; private set; }
 
-    [SerializeField] private float timeMax = 180.0f;
-    [SerializeField] private TimeRemainingsDisplay timeRemainingsDisplayGameObject;
+    [SerializeField] public float timeMax = 180.0f;
+    [SerializeField] private ThermometerController thermometerControllerGameObject;
     [SerializeField] private GameObject finishAnimationGameObject;
 
     public float time { get; private set; }
     private float accelerate = 3.5f;
-    private float decelerate = -0.5f;
+    private float decelerate = -2.5f;
     private TimeState state = TimeState.Normal;
     private bool isTimeup = false;
     private bool isStarted = false;
 
-    private KeyCode DebugAccele = KeyCode.F1;
-    private KeyCode DebugDecele = KeyCode.F2;
+    // 残り時間の減少加速中に減る最大秒数
+    private float accelerateElapsedMax = 20.0f;
+
+    // 残り時間の減少加速中に減った秒数
+    private float accelerateElapsedTime = 0.0f;
 
     // 時間切れイベント
     public event Action OnTimeup;
@@ -53,7 +56,7 @@ public class TimeManager : MonoBehaviour
 
         Initialize();
 
-        var timeRemainingsDisplay = Instantiate(timeRemainingsDisplayGameObject, this.transform);
+        var timeRemainingsDisplay = Instantiate(thermometerControllerGameObject, this.transform);
         timeRemainingsDisplay.Initialize(this);
 
         OnTimeup += PlayFinishAnimation;
@@ -165,6 +168,15 @@ public class TimeManager : MonoBehaviour
                 break;
             case TimeState.Accele:
                 decrease *= accelerate;
+                if( accelerateElapsedTime > accelerateElapsedMax )
+                {
+                    ChangeTimeState(TimeState.Normal);
+                    accelerateElapsedTime = 0.0f;
+                }
+                else
+                {
+                    accelerateElapsedTime += decrease;
+                }
                 break;
             case TimeState.Decele:
                 decrease *= decelerate;
