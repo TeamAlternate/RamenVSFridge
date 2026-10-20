@@ -12,6 +12,11 @@ namespace Util.UserInterfaces
 
         public Coroutine EnterTransition(string NextSceneName)
         {
+            if(Current != null)
+            {
+                Destroy(this.gameObject);
+                return null;
+            }
             Current = this;
             SceneTransition.NextSceneName = NextSceneName;
             return StartCoroutine(InternalRoutine());
