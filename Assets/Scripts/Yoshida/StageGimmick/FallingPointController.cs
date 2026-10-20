@@ -12,7 +12,6 @@ public class FallingPointController : MonoBehaviour
     const float RANGE_MAX = 3.0f;
 
     [SerializeField] private float timer = 5.0f;
-    [SerializeField] private float radius = 1.5f;
     [SerializeField] private float stunDuration = 2.0f;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private SpriteRenderer circle;

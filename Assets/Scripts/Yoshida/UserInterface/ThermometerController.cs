@@ -11,8 +11,10 @@ public class ThermometerController : MonoBehaviour
 {
     [SerializeField] private Image thermometerImage;
     [SerializeField] private Image liquidImage;
+    [SerializeField] private CloudMove cloudImage;
 
     private TimeManager timeManagerGameObject;
+    private CloudMove cloudMoveGameObject;
     private float remainingsTime = 0.0f;
     private float timeMax;
 
@@ -21,6 +23,8 @@ public class ThermometerController : MonoBehaviour
         timeManagerGameObject = timeManager;
         this.remainingsTime = timeManagerGameObject.time;
         this.timeMax = timeManagerGameObject.timeMax;
+
+        cloudMoveGameObject = Instantiate(cloudImage, this.transform);
     }
 
     private void Update()
@@ -30,6 +34,7 @@ public class ThermometerController : MonoBehaviour
         float percent = remainingsTime / timeMax;
         ImageUpdate(percent);
         ColorUpdate(timeManagerGameObject.GetTimeState());
+        cloudMoveGameObject.PositionUpdate(percent);
     }
 
     private void ImageUpdate(float percent)
@@ -44,11 +49,14 @@ public class ThermometerController : MonoBehaviour
         switch (state)
         {
             case TimeState.Normal:
+                cloudMoveGameObject.VisibleChange(false, false, false);
                 break;
             case TimeState.Accele:
+                cloudMoveGameObject.VisibleChange(true, true, false);
                 newTextColor = Color.cyan;
                 break;
             case TimeState.Decele:
+                cloudMoveGameObject.VisibleChange(true, false, true);
                 newTextColor = Color.red;
                 break;
         }
