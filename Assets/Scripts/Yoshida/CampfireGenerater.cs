@@ -8,8 +8,8 @@ public class CampfireGenerater : MonoBehaviour
 
     private CampfireController campfire;
     private float time = 0.0f;
-    private float minIntervalTime = 15.0f;
-    private float intervalRandomRange = 10.0f;
+    private float minIntervalTime = 25.0f;
+    private float intervalRandomRange = 5.0f;
 
     private void Awake()
     {

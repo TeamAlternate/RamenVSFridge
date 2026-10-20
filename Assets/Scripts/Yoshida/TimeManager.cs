@@ -25,14 +25,14 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject finishAnimationGameObject;
 
     public float time { get; private set; }
-    private float accelerate = 3.5f;
+    private float accelerate = 5.0f;
     private float decelerate = -2.5f;
     private TimeState state = TimeState.Normal;
     private bool isTimeup = false;
     private bool isStarted = false;
 
     // c‚èŠÔ‚ÌŒ¸­‰Á‘¬’†‚ÉŒ¸‚éÅ‘å•b”
-    [SerializeField] private float accelerateElapsedMax = 30.0f;
+    [SerializeField] private float accelerateElapsedMax = 25.0f;
 
     // c‚èŠÔ‚ÌŒ¸­‰Á‘¬’†‚ÉŒ¸‚Á‚½•b”
     private float accelerateElapsedTime = 0.0f;
