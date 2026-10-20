@@ -20,13 +20,13 @@ public class TimeManager : MonoBehaviour
 
     public static TimeManager instance { get; private set; }
 
-    [SerializeField] private float timeMax = 180.0f;
-    [SerializeField] private TimeRemainingsDisplay timeRemainingsDisplayGameObject;
+    [SerializeField] public float timeMax = 180.0f;
+    [SerializeField] private ThermometerController timeRemainingsDisplayGameObject;
     [SerializeField] private GameObject finishAnimationGameObject;
 
     public float time { get; private set; }
     private float accelerate = 3.5f;
-    private float decelerate = -0.5f;
+    private float decelerate = -2.5f;
     private TimeState state = TimeState.Normal;
     private bool isTimeup = false;
     private bool isStarted = false;

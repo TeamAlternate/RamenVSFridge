@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeMax: 180
-  timeRemainingsDisplayGameObject: {fileID: 6787174825477332656, guid: 49c803d56bd03cb45bed8a928fffe5d1, type: 3}
+  timeRemainingsDisplayGameObject: {fileID: 7618245448985288323, guid: ae6af3f92372ef54c9ceb17cc738b4a9, type: 3}
   finishAnimationGameObject: {fileID: 4821638730148614470, guid: fc815c3c64d077a4c8ff679a49a7cdc7, type: 3}

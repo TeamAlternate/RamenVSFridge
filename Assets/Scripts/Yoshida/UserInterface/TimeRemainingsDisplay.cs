@@ -6,7 +6,7 @@ using UnityEngine.TextCore.Text;
 /// <summary>
 /// Žc‚èŽžŠÔ•\Ž¦
 /// </summary>
-public class TimeRemainingsDisplay : MonoBehaviour
+public class TimeRemaingsDisplay : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TMP_FontAsset fontAsset;
