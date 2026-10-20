@@ -16,6 +16,7 @@ namespace UserInterfaces
             appearenceInstance.transform.SetParent(appearencePivot);
             appearenceInstance.transform.localPosition = Vector3.zero;
             appearenceInstance.transform.localScale = Vector3.one;
+            appearenceInstance.transform.localRotation = Quaternion.Euler(UnityEngine.Random.Range(0.0f, 360.0f) * Vector3.up);
             foreach(MonoBehaviour userScript in appearenceInstance.GetComponentsInChildren<MonoBehaviour>())
             {
                 Destroy(userScript);
