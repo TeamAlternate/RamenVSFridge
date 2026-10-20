@@ -6,6 +6,7 @@ public class HotSteam : MonoBehaviour
     [SerializeField] private float trailLifetimeOnFullHeat;
     [SerializeField] private float steamUpwardingSpeed;
 
+    private Transform sourcePosition;
     private TimeManager timeManager;
     private TrailRenderer trailRenderer;
 
@@ -14,16 +15,18 @@ public class HotSteam : MonoBehaviour
     {
         timeManager = TimeManager.instance;
         trailRenderer = GetComponent<TrailRenderer>();
+        sourcePosition = this.transform.parent;
+        this.transform.parent = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i = trailRenderer.positionCount - 1; i >= 1; i--)
+        this.transform.position = sourcePosition.position;
+        for(int i = 0; i < trailRenderer.positionCount; i++)
         {
-            trailRenderer.SetPosition(i - 1, trailRenderer.GetPosition(i) + steamUpwardingSpeed * Time.deltaTime * Vector3.up);
+            trailRenderer.SetPosition(i, trailRenderer.GetPosition(i) + steamUpwardingSpeed * Time.deltaTime * Vector3.up);
         }
-        trailRenderer.AddPosition(this.transform.position);
         trailRenderer.time = Mathf.Lerp(0.0f, trailLifetimeOnFullHeat, timeManager.time / 180.0f);
     }
 }
