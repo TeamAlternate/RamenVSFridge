@@ -6,7 +6,7 @@ using UnityEngine.TextCore.Text;
 /// <summary>
 /// Žc‚èŽžŠÔ•\Ž¦
 /// </summary>
-public class TimeRemainingsDisplay : MonoBehaviour
+public class TimeRemaingsDisplay : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TMP_FontAsset fontAsset;
@@ -30,12 +30,25 @@ public class TimeRemainingsDisplay : MonoBehaviour
         ColorUpdate(timeManagerGameObject.GetTimeState());
     }
 
+    private void WaitForPlayerText()
+    {
+        string text = "Waiting for player join...";
+
+        timeText.text = text;
+    }
+
     private void TextUpdate(float time)
     {
         int add = 0;
         if( time > 0.0f )
         {
             add = 1;
+
+            if( (int)time == 180 )
+            {
+                WaitForPlayerText();
+                return;
+            }
         }
 
         int minutes = ((int)time + add) / 60;

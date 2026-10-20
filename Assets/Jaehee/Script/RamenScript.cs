@@ -49,7 +49,7 @@ public class RamenScript : MonoBehaviour
 
     public void OnAttack(InputValue input)
     {
-        if (input.isPressed && !attackChecker)
+        if (input.isPressed && !attackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Ramen attack");
             attackTime = 0.0f;
@@ -61,7 +61,7 @@ public class RamenScript : MonoBehaviour
 
     public void OnSpecialAttack(InputValue input)
     {
-        if (input.isPressed && !specialAttackChecker)
+        if (input.isPressed && !specialAttackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Ramen Special Attack");
             specialAttackTime = 0.0f;
@@ -69,6 +69,14 @@ public class RamenScript : MonoBehaviour
             specialAttackCollider.SetActive(true);
             ramenSpecialAttackEffect.GetComponent<ParticleSystem>().Play(true);
         }
+    }
+
+    public void CancelAttacks()
+    {
+        attackCollider.SetActive(false);
+        specialAttackCollider.SetActive(false);
+        ramenAttackEffect.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        ramenSpecialAttackEffect.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     private void AttackTimer()

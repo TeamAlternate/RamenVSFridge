@@ -1,8 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
+    public UnityEvent GetTopping;
+
     public static ScoreManager instance { get; private set; }
 
     [SerializeField]
@@ -29,6 +32,7 @@ public class ScoreManager : MonoBehaviour
     public void AddToppintScore()
     {
         toppingScore++;
+        GetTopping.Invoke();
         Debug.Log("ToppingScore:" + toppingScore);
     }
 

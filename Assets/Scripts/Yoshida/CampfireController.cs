@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CampfireController : MonoBehaviour
 {
+    public UnityEvent HitEvents;
+
+    [SerializeField] private float accelerate = 1.25f;
+
     private float lifeTime = 10.0f;
-    private float accelerate = 1.5f;
     private Vector3 transformRangeMin = new Vector3(-4.0f, 0.0f, -4.0f);
     private Vector3 transformRangeMax = new Vector3(4.0f, 0.0f, 4.0f);
 
@@ -22,6 +26,7 @@ public class CampfireController : MonoBehaviour
         }
     }
 
+    // キャンプファイヤーのライフタイムを減らす
     private void OnTriggerStay(Collider other)
     {
         bool isRamen = other.gameObject.tag == "Ramen";
@@ -29,6 +34,15 @@ public class CampfireController : MonoBehaviour
         {
             // 自身のライフタイムの減少を加速する
             lifeTime -= Time.deltaTime * (accelerate - 1.0f);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        bool isRamen = other.gameObject.tag == "Ramen";
+        if (isRamen)
+        {
+            HitEvents.Invoke();
         }
     }
 
