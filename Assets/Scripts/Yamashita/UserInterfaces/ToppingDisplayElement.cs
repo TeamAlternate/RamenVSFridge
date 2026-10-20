@@ -20,6 +20,10 @@ namespace UserInterfaces
             {
                 Destroy(userScript);
             }
+            if(appearenceInstance.TryGetComponent<Rigidbody>( out var r))
+            {
+                Destroy(r);
+            }
         }
     }
 }

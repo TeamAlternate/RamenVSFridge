@@ -7,6 +7,9 @@ public class Topping : MonoBehaviour
         if (other.gameObject.CompareTag("Ramen"))
         {
             ScoreManager.instance.AddToppintScore();
+            GameObject go = Instantiate(this.gameObject);
+            UserInterfaces.ToppingDisplay.AddTopping(go);
+            Debug.Log("Create", go);
             Destroy(gameObject);
         }
     }

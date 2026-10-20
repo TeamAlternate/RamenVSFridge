@@ -44,7 +44,7 @@ public class ToppingController : MonoBehaviour
         bool isRamen = other.gameObject.tag == "Ramen";
         if(isRamen)
         {
-            // AddTopping(toppingModel);
+
             Destroy(this.gameObject);
         }
     }
