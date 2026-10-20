@@ -15,6 +15,11 @@ namespace UserInterfaces
         {
             appearenceInstance.transform.SetParent(appearencePivot);
             appearenceInstance.transform.localPosition = Vector3.zero;
+            appearenceInstance.transform.localScale = Vector3.one;
+            foreach(MonoBehaviour userScript in appearenceInstance.GetComponentsInChildren<MonoBehaviour>())
+            {
+                Destroy(userScript);
+            }
         }
     }
 }
