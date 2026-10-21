@@ -2987,7 +2987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeManager: {fileID: 580326149}
-  toEndingTransitionPrefab: {fileID: 8963216355167468439, guid: 1c405b7e63aef17438202eb641e72cc3, type: 3}
+  toEndingTransitionPrefab: {fileID: 8963216355167468439, guid: 0c545d87e27ef2e4185e07842cc8fc85, type: 3}
   endingSceneName: EndingScene
   onGameSet:
     m_PersistentCalls:
