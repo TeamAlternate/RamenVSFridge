@@ -10,6 +10,7 @@ namespace UserInterfaces
         [SerializeField] private Material[] resultTypeMaterials;
 
         [SerializeField] private UnityEvent onWinnerRamen;
+        [SerializeField] private UnityEvent onWinnerFridge;
 
         public void UpdateDisplay(MatchResult newMatchResult)
         {
@@ -18,6 +19,10 @@ namespace UserInterfaces
             if( newMatchResult.resultType == MatchResult.ResultTypes.RamenWin )
             {
                 onWinnerRamen.Invoke();
+            }
+            if (newMatchResult.resultType == MatchResult.ResultTypes.FridgeWin)
+            {
+                onWinnerFridge.Invoke();
             }
         }
     }
