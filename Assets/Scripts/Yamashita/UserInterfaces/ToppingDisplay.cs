@@ -51,6 +51,11 @@ namespace UserInterfaces
 
         public static void AddTopping(GameObject toppingVisual)
         {
+            if(instance == null)
+            {
+                Destroy(toppingVisual);
+                return;
+            }
             instance.OnAddTopping(toppingVisual);
         }
     }

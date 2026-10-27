@@ -12,6 +12,8 @@ public class RamenScript : MonoBehaviour
     GameObject ramenAttackEffect;
     [SerializeField]
     GameObject ramenSpecialAttackEffect;
+    [SerializeField]
+    GameObject freezedIceVisual;
 
     // çUåÇä÷òA
     private const float maxAttackTime = 2.0f;
@@ -28,6 +30,8 @@ public class RamenScript : MonoBehaviour
         ? Mathf.Clamp01(specialAttackTime / maxSpecialTime)
         : 1f;
 
+    private bool isFreezed;
+
     private void Awake()
     {
         if (attackCollider)
@@ -39,16 +43,35 @@ public class RamenScript : MonoBehaviour
         {
             specialAttackCollider.SetActive(false);
         }
+
+        if(freezedIceVisual)
+        {
+            freezedIceVisual.SetActive(false);
+        }
     }
 
     private void Update()
     {
+        bool nowFreezed = false;
+        if(TimeManager.instance != null)
+        {
+            nowFreezed = TimeManager.instance.time < 2.0f;
+        }
+        if (isFreezed != nowFreezed)
+        {
+            isFreezed = nowFreezed;
+            freezedIceVisual.SetActive(isFreezed);
+        }
         AttackTimer();
         SpecialAttackTimer();
     }
 
     public void OnAttack(InputValue input)
     {
+        if(isFreezed)
+        {
+            return;
+        }
         if (input.isPressed && !attackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Ramen attack");
@@ -61,6 +84,10 @@ public class RamenScript : MonoBehaviour
 
     public void OnSpecialAttack(InputValue input)
     {
+        if (isFreezed)
+        {
+            return;
+        }
         if (input.isPressed && !specialAttackChecker && GetComponentInParent<PlayerMovement>()?.IsStunned != true)
         {
             Debug.Log("Ramen Special Attack");
