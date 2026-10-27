@@ -14,12 +14,15 @@ public class SpecialAttackCooldownUI : MonoBehaviour
     [SerializeField] private CharacterType character;
     [SerializeField] private Image cooldownImage;
     [SerializeField] private UnityEvent chargedSound;
+    [SerializeField] private UnityEvent specialSound;
 
     private Image backgroundImage;
     private RamenScript ramen;
     private FridgeScript fridge;
     private bool playedRamenChargedSound = true;
     private bool playedFridgeChargedSound = true;
+    private bool playedRamenSpecialSound = true;
+    private bool playedFridgeSpecialSound = true;
 
     private void Awake()
     {
@@ -47,6 +50,17 @@ public class SpecialAttackCooldownUI : MonoBehaviour
                     playedRamenChargedSound = false;
                 }
 
+                if( ramen.SpecialCooldownFill >= 1.0f )
+                {
+                    playedRamenSpecialSound = false;
+                }
+
+                if( ramen.SpecialCooldownFill < 1.0f && !playedRamenSpecialSound )
+                {
+                    specialSound.Invoke();
+                    playedRamenSpecialSound = true;
+                }
+
                 if (ramen.SpecialCooldownFill >= 1.0f && !playedRamenChargedSound)
                 {
                     chargedSound.Invoke();
@@ -68,6 +82,17 @@ public class SpecialAttackCooldownUI : MonoBehaviour
                 if( fridge.SpecialCooldownFill < 1.0f )
                 {
                     playedFridgeChargedSound = false;
+                }
+
+                if (fridge.SpecialCooldownFill >= 1.0f)
+                {
+                    playedFridgeSpecialSound = false;
+                }
+
+                if (fridge.SpecialCooldownFill < 1.0f && !playedFridgeSpecialSound)
+                {
+                    specialSound.Invoke();
+                    playedFridgeSpecialSound = true;
                 }
 
                 if (fridge.SpecialCooldownFill >= 1.0f && !playedFridgeChargedSound)
