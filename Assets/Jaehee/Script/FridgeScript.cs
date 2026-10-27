@@ -16,7 +16,7 @@ public class FridgeScript : MonoBehaviour
     GameObject fridgeSpecialAttackEffect;
 
     // UŒ‚ŠÖ˜A
-    private const float maxAttackTime = 2.0f;
+    private const float maxAttackTime = 0.75f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
 
