@@ -151,6 +151,9 @@ public class TimeManager : MonoBehaviour
     /// </param>
     public void ChangeTimeState(TimeState newState)
     {
+        // UŒ‚‚ğó‚¯‚é‚½‚Ñ‚É—â‚â‚³‚ê‚éÅ‘åŠÔ‚ğƒŠƒZƒbƒg
+        accelerateElapsedTime = 0.0f;
+
         state = newState;
     }
 
