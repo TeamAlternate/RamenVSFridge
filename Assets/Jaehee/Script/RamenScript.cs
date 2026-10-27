@@ -17,8 +17,10 @@ public class RamenScript : MonoBehaviour
 
     // UŒ‚ŠÖ˜A
     private const float maxAttackTime = 0.55f;
+    private const float attackCoolTime = 1.75f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
+    private float attackCool = 0.0f;
 
     // •KE‹ZŠÖ˜A
     private const float maxSpecialTime = 30.0f;
@@ -76,6 +78,7 @@ public class RamenScript : MonoBehaviour
         {
             Debug.Log("Ramen attack");
             attackTime = 0.0f;
+            attackCool = attackCoolTime;
             attackChecker = true;
             attackCollider.SetActive(true);
             ramenAttackEffect.GetComponent<ParticleSystem>().Play();
@@ -113,13 +116,18 @@ public class RamenScript : MonoBehaviour
         {
             return;
         }
-
+     
         attackTime += Time.deltaTime;
+        attackCool -= Time.deltaTime;
 
         if (attackTime >= maxAttackTime)
         {
-            attackChecker = false;
             attackCollider.SetActive(false);
+        }
+        
+        if( attackCool <= 0.0f)
+        {
+            attackChecker = false;
         }
     }
 

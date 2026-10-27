@@ -17,8 +17,10 @@ public class FridgeScript : MonoBehaviour
 
     // UŒ‚ŠÖ˜A
     private const float maxAttackTime = 0.55f;
+    private const float attackCoolTime = 1.75f;
     private float attackTime = 0.0f;
     private bool attackChecker = false;
+    private float attackCool = 0.0f;
 
     // •KE‹ZŠÖ˜A
     private const float maxSpecialTime = 30.0f;
@@ -59,6 +61,7 @@ public class FridgeScript : MonoBehaviour
         {
             Debug.Log("Fridge attack");
             attackTime = 0.0f;
+            attackCool = attackCoolTime;
             attackChecker = true;
             attackCollider.SetActive(true);
             fridgeAttackEffect.GetComponent<ParticleSystem>().Play();
@@ -93,11 +96,16 @@ public class FridgeScript : MonoBehaviour
         }
 
         attackTime += Time.deltaTime;
+        attackCool -= Time.deltaTime;
 
         if (attackTime >= maxAttackTime)
         {
-            attackChecker = false;
             attackCollider.SetActive(false);
+        }
+
+        if (attackCool <= 0.0f)
+        {
+            attackChecker = false;
         }
     }
 
