@@ -61,6 +61,7 @@ namespace Scenes
                 return;
             }
             isGameSet = true;
+            MatchSettings.recent.SetResult(TimeManager.instance.time, ScoreManager.instance.GetScore());
             MatchResult.Update(result);
             instance.MoveToEnding();
             instance.onGameSet.Invoke();

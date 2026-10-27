@@ -15,9 +15,24 @@ public class MatchSettings
 
     public PlayerInputData ramenPlayer, fridgePlayer;
 
+    public float lastTime { get; private set; } = 0.0f;
+    public int getToppings { get; private set; } = 0;
+
+    public void MatchSetting()
+    {
+        lastTime = 0.0f;
+        getToppings = 0;
+    }
+
     public static void Update(MatchSettings newSettings)
     {
         recent = newSettings;
+    }
+
+    public void SetResult(float time, int toppings)
+    {
+        lastTime = time;
+        getToppings = toppings; 
     }
 }
 

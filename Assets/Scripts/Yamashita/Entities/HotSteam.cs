@@ -27,6 +27,13 @@ public class HotSteam : MonoBehaviour
         {
             trailRenderer.SetPosition(i, trailRenderer.GetPosition(i) + steamUpwardingSpeed * Time.deltaTime * Vector3.up);
         }
-        trailRenderer.time = Mathf.Lerp(0.0f, trailLifetimeOnFullHeat, timeManager.time / 180.0f);
+
+        float time = 180.0f;
+        if (timeManager != null)
+        {
+            time = timeManager.time;
+        }
+
+        trailRenderer.time = Mathf.Lerp(0.0f, trailLifetimeOnFullHeat, time / 180.0f);
     }
 }
