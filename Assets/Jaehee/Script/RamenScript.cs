@@ -98,7 +98,7 @@ public class RamenScript : MonoBehaviour
             specialAttackChecker = true;
             specialAttackCollider.SetActive(true);
             ramenSpecialAttackEffect.GetComponent<ParticleSystem>().Play(true);
-            TimeManager.instance.AddTime(0.1f);
+            TimeManager.instance.AddTime(0.15f);
         }
     }
 
